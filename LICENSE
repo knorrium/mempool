@@ -13,3 +13,20 @@ License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Supplemental terms under Section 7 of the GNU AGPL version 3:
+
+1) If you modify this Program, you are required to preserve the text, images,
+and hyperlinks relating to the Appropriate Legal Notices and attributions
+displayed on the "About" screen of the web interface, and prominently display a
+link to this content from the home screen of the web interface.
+
+2) This license does not grant you any rights to use the trademarks
+"mempool.space", any "mempool.space" logos, or any other trademarks of Mempool
+Space K.K., and on any publicly hosted versions of the web interface of this
+Program you must state that you are not affiliated with Mempool Space K.K.
+
+3) For the purposes of clarity, "The Program" consists of the source code and
+related files to build the mempool web frontend and the mempool api backend,
+and does not extend to other network applications outside of the scope of the
+mempool open source project.
