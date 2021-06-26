@@ -39,6 +39,8 @@ jobs:
 
       - name: Checkout project
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Init repo for Dockerization
         run: docker/init.sh "$TAG"
