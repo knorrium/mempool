@@ -1,8 +1,11 @@
 FROM node:12-buster-slim AS builder
 
+ARG commitHash
+ENV DOCKER_COMMIT_HASH=${commitHash}
+
 WORKDIR /build
 COPY . .
-COPY ../.git/ ./.git/
+
 RUN apt-get update
 RUN apt-get install -y build-essential rsync git
 RUN npm i
