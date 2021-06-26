@@ -19,6 +19,9 @@ jobs:
           - frontend
           - backend
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: /bin/bash -e {0}
     container: ubuntu:18.04
     name: Build and push to DockerHub
     steps:
