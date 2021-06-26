@@ -76,7 +76,7 @@ jobs:
           --platform linux/amd64,linux/arm64,linux/arm/v7 \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG \
           --output "type=registry" ./${{ matrix.service }} \
-          --build-arg commitHash=$SHORT_SHA /
+          --build-arg commitHash=$SHORT_SHA/
 
       - name: Run Docker buildx for ${{ matrix.service }} against latest
         run: |
@@ -86,5 +86,5 @@ jobs:
           --platform linux/amd64,linux/arm64,linux/arm/v7 \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest \
           --output "type=registry" ./${{ matrix.service }} \
-          --build-arg commitHash=$SHORT_SHA /
+          --build-arg commitHash=$SHORT_SHA/
 
