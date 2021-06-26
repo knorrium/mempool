@@ -2,7 +2,7 @@ FROM node:12-buster-slim AS builder
 
 WORKDIR /build
 COPY . .
-COPY ..git/ ./.git/
+COPY ../../.git/ ./.git/
 RUN apt-get update
 RUN apt-get install -y build-essential rsync git
 RUN npm i
