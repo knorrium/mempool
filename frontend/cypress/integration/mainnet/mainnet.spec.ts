@@ -124,6 +124,7 @@ describe('Mainnet', () => {
                 cy.get('#details').should('not.be.visible');
             });
         });
+
         it('shows blocks with no pagination', () => {
             cy.visit('/block/00000000000000000001ba40caf1ad4cec0ceb77692662315c151953bfd7c4c4');
             cy.waitForSkeletonGone();
