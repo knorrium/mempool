@@ -19,5 +19,5 @@ steps:
     cd frontend
     npm install -g @angular/cli
     npm install
-    ng build --prod
+    npm run build
   displayName: 'npm install and build'
