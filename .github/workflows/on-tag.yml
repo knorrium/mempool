@@ -62,9 +62,8 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           file: Dockerfile
           push: true
-          image: ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}
           tags: |
-            $TAG, latest
+            ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG, ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
           build-args: |
             commitHash=$SHORT_SHA
           cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
