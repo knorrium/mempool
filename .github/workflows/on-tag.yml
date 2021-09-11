@@ -63,8 +63,8 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            $TAG, latest
+            ${{ $TAG }}, latest
           build-args: |
-            commitHash=$SHORT_SHA
+            commitHash=${{ $SHORT_SHA }}
           cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
           cache-to: type=gha,mode=max,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
