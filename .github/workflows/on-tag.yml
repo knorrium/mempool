@@ -52,8 +52,9 @@ jobs:
         env:
           GIT_TAG: ${{ steps.vars-tag.outputs.tag }}
         run: | 
-          chmod +x docker/init.sh
-          docker/init.sh ${{ env.GIT_TAG }}
+          chmod +x ./docker/init.sh
+          ./docker/init.sh ${{ env.GIT_TAG }}
+        shell: bash
 
       - name: Setup Docker buildx action
         uses: docker/setup-buildx-action@v1
