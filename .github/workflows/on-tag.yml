@@ -21,12 +21,19 @@ jobs:
     runs-on: ubuntu-18.04
     name: Build and push to DockerHub
     steps:
-      - name: Set env variables
-        run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+      - name: Set GitHub Short Sha
+        id: vars-sha
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      
+      - name: Check GitHub Short Sha
+        run: echo ${{ steps.vars.outputs.sha_short }}
 
-      - name: Show set environment variables
-        run: |
-          printf "      TAG: %s\n"  "$TAG"
+      - name: Set TAG
+        id: vars-tag
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      
+      - name: Check TAG
+        run: echo ${{ steps.vars.outputs.tag }}
       
       - name: Add SHORT_SHA env property with commit short sha
         run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
@@ -63,8 +70,8 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ${TAG}, latest
+            ${{ steps.vars.outputs.tag }}, latest
           build-args: |
-            commitHash=${SHORT_SHA}
+            commitHash=${{ steps.vars.outputs.sha_short }}
           cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
           cache-to: type=gha,mode=max,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
