@@ -1,6 +1,6 @@
 FROM node:12-buster-slim AS builder
 
-WORKDIR /build
+#WORKDIR /build
 COPY . .
 
 RUN apt-get update
