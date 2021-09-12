@@ -51,7 +51,7 @@ jobs:
       - name: Init repo for Dockerization
         env:
           GIT_TAG: ${{ steps.vars-tag.outputs.tag }}
-        - run: | 
+      - run: | 
           ls
           chmod +x ./docker/init.sh
           ./docker/init.sh ${{ env.GIT_TAG }}
