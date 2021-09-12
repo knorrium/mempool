@@ -49,13 +49,13 @@ jobs:
         id: qemu
 
       - name: Init repo for Dockerization
-        - run: | 
-            ls
-            chmod +x ./docker/init.sh
-            ./docker/init.sh ${{ env.GIT_TAG }}
-          shell: bash
-          env:
-            GIT_TAG: ${{ steps.vars-tag.outputs.tag }}
+      - run: | 
+          ls
+          chmod +x ./docker/init.sh
+          ./docker/init.sh ${{ env.GIT_TAG }}
+        shell: bash
+        env:
+          GIT_TAG: ${{ steps.vars-tag.outputs.tag }}
 
       - name: Setup Docker buildx action
         uses: docker/setup-buildx-action@v1
