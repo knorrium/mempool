@@ -49,10 +49,14 @@ jobs:
         id: qemu
 
       - name: Init repo for Dockerization
-      - run: | 
+        run: | 
           ls
+          echo "change perms"
           chmod +x ./docker/init.sh
+          echo "run init"
           ./docker/init.sh ${{ env.GIT_TAG }}
+          ls
+          echo "ls again"
         shell: bash
         env:
           GIT_TAG: ${{ steps.vars-tag.outputs.tag }}
