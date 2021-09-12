@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         service:
-          - frontend
           - backend
     runs-on: ubuntu-18.04
     name: Build and push to DockerHub
