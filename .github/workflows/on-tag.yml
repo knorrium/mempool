@@ -84,5 +84,5 @@ jobs:
             ${{ github.repository_owner }}/${{ matrix.service }}:${{ steps.vars-tag.outputs.tag }}, ${{ github.repository_owner }}/${{ matrix.service }}:latest
           build-args: |
             commitHash=${{ steps.vars-sha.outputs.sha_short }}
-          cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
-          cache-to: type=gha,mode=max,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
+          cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.job }}-${{ runner.os }}-v1
+          cache-to: type=gha,mode=max,scope=docker-${{ matrix.service }}-${{ github.job }}-${{ runner.os }}-v1
