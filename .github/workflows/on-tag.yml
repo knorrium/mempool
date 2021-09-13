@@ -80,7 +80,7 @@ jobs:
           file: ./${{ matrix.service }}/Dockerfile
           push: true
           tags: |
-            ${{ github.repository_owner }}/$$ matrix.service}}:${{ steps.vars-tag.outputs.tag }}, ${{ github.repository_owner }}/$$ matrix.service}}:${{ steps.vars-tag.outputs.tag }}:latest
+            ${{ github.repository_owner }}/${{ matrix.service }}:${{ steps.vars-tag.outputs.tag }}, ${{ github.repository_owner }}/${{ matrix.service }}:${{ steps.vars-tag.outputs.tag }}:latest
           build-args: |
             commitHash=${{ steps.vars-sha.outputs.sha_short }}
           cache-from: type=gha,scope=docker-${{ matrix.service }}-${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-v1
