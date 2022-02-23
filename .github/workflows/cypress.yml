@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master
+      - 'emzy:**'
+      - 'hunicus:**'
+      - 'knorrium:**'
+      - 'nymkappa:**'
+      - 'softsimon:**'
+      - 'wiz:**'
   pull_request:
 jobs:
   cypress:
