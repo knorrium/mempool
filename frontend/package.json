@@ -91,7 +91,7 @@
     "lightweight-charts": "^3.3.0",
     "ngx-bootrap-multiselect": "^2.0.0",
     "ngx-echarts": "8.0.1",
-    "ngx-infinite-scroll": "^10.0.1",
+    "ngx-infinite-scroll": "^13.0.1",
     "qrcode": "1.5.0",
     "rxjs": "^6.6.7",
     "tinyify": "^3.0.0",
