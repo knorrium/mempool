@@ -24,12 +24,10 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
     - name: install frontend dependencies
-      with:
-        working-directory: frontend
+      working-directory: frontend
       run: npm install
     - name: run frontend build
-      with:
-        working-directory: frontend
+      working-directory: frontend
       run: npm run build
 
     - name: install the dependencies and build the backend on node ${{ matrix.version }}
@@ -37,10 +35,8 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
     - name: install frontend dependencies
-      with:
-        working-directory: backend
+      working-directory: backend
       run: npm install
     - name: run backend build
-      with:
-        working-directory: backend
+      working-directory: backend
       run: npm run build
