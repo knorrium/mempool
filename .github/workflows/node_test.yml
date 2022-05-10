@@ -24,9 +24,11 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
     - name: install frontend dependencies
+      if: always() 
       working-directory: frontend
       run: npm install
     - name: run frontend build
+      if: always() 
       working-directory: frontend
       run: npm run build
 
@@ -35,8 +37,10 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
     - name: install frontend dependencies
+      if: always() 
       working-directory: backend
       run: npm install
     - name: run backend build
+      if: always() 
       working-directory: backend
       run: npm run build
