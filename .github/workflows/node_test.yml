@@ -1,11 +1,6 @@
 name: Node Compatibility Test
 
-on: 
- workflow_dispatch:
-    inputs:
-      name: pr
-        description: Pull Request ID
-        required: true
+on: push
 jobs:
   build-matrix:
     runs-on: ubuntu-latest
@@ -24,13 +19,19 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-      with:
-        ref: pull/${{ github.event.inputs.pr }}/head
     
     - name: setup node ${{ matrix.version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.version }}
+
+    - name: show node version
+      if: always()
+      run: node --version
+    
+    - name: show npm version
+      if: always()
+      run: npm --version
 
     - name: install frontend dependencies
       if: always() 
