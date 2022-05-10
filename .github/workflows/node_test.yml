@@ -1,0 +1,35 @@
+name: Node Compatibility Test
+
+on: push
+jobs:
+  build-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - id: set-matrix
+        run: echo "::set-output name=version_matrix::$(curl https://endoflife.date/api/nodejs.json | jq -c '[.[] | select(.eol > (now | strftime("%Y-%m-%d"))) | .cycle]')"
+    outputs:
+      version_matrix: ${{ steps.set-matrix.outputs.version_matrix }}
+  ci:
+    needs: build-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ${{ fromJson(needs.build-matrix.outputs.version_matrix) }}
+    steps:
+    - name: install the dependencies and build the frontend on node ${{ matrix.version }}
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.version }}
+          working-directory: frontend
+      - run: npm install
+      - run: npm run build
+
+    - name: install the dependencies and build the backend on node ${{ matrix.version }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.version }}
+          working-directory: backend
+      - run: npm install
+      - run: npm run build
