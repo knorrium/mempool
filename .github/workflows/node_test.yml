@@ -13,6 +13,7 @@ jobs:
     needs: build-matrix
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         version: ${{ fromJson(needs.build-matrix.outputs.version_matrix) }}
     steps:
@@ -38,7 +39,7 @@ jobs:
       if: always() 
       working-directory: backend
       run: npm install
-      
+
     - name: run backend build
       if: always() 
       working-directory: backend
