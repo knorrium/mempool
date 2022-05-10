@@ -18,18 +18,19 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
+    
     - name: install the dependencies and build the frontend on node ${{ matrix.version }}
+      working-directory: frontend
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.version }}
-        working-directory: frontend
     - run: npm install
     - run: npm run build
 
     - name: install the dependencies and build the backend on node ${{ matrix.version }}
       uses: actions/setup-node@v2
+      working-directory: backend
       with:
         node-version: ${{ matrix.version }}
-        working-directory: backend
     - run: npm install
     - run: npm run build
