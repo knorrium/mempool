@@ -1,0 +1,31 @@
+name: Generate Docker Image from PR
+env:
+  DOCKER_CLI_EXPERIMENTAL: enabled
+  TAG_FMT: '^refs/tags/(((.?[0-9]+){3,4}))$'
+  DOCKER_BUILDKIT: 0
+  COMPOSE_DOCKER_CLI_BUILD: 0
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Pull Request ID
+    
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        service:
+          - frontend
+          - backend
+    runs-on: ubuntu-18.04
+    name: Build and push to DockerHub
+    steps:
+      - id: set-tag
+        run: echo "::set-env name=tag::$(cat ${{ matrix.service }}/package.json | jq -r '.version')-${{ github.sha }}"
+  
+      - name: print tag
+        run: echo $tag
