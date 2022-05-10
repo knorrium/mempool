@@ -12,7 +12,6 @@ import { StartComponent } from './components/start/start.component';
 import { ElectrsApiService } from './services/electrs-api.service';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { TransactionsListComponent } from './components/transactions-list/transactions-list.component';
-import { AmountComponent } from './components/amount/amount.component';
 import { StateService } from './services/state.service';
 import { BlockComponent } from './components/block/block.component';
 import { AddressComponent } from './components/address/address.component';
@@ -20,15 +19,12 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { LatestBlocksComponent } from './components/latest-blocks/latest-blocks.component';
 import { WebsocketService } from './services/websocket.service';
 import { AddressLabelsComponent } from './components/address-labels/address-labels.component';
-import { MempoolBlocksComponent } from './components/mempool-blocks/mempool-blocks.component';
 import { MasterPageComponent } from './components/master-page/master-page.component';
 import { BisqMasterPageComponent } from './components/bisq-master-page/bisq-master-page.component';
 import { LiquidMasterPageComponent } from './components/liquid-master-page/liquid-master-page.component';
 import { AboutComponent } from './components/about/about.component';
 import { TelevisionComponent } from './components/television/television.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
-import { BlockchainBlocksComponent } from './components/blockchain-blocks/blockchain-blocks.component';
-import { BlockchainComponent } from './components/blockchain/blockchain.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AudioService } from './services/audio.service';
 import { MempoolBlockComponent } from './components/mempool-block/mempool-block.component';
@@ -52,12 +48,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DifficultyComponent } from './components/difficulty/difficulty.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faFilter, faAngleDown, faAngleUp, faAngleRight, faAngleLeft, faBolt, faChartArea, faCogs, faCubes, faHammer, faDatabase, faExchangeAlt, faInfoCircle,
-  faLink, faList, faSearch, faCaretUp, faCaretDown, faTachometerAlt, faThList, faTint, faTv, faAngleDoubleDown, faSortUp, faAngleDoubleUp, faChevronDown, faFileAlt, faRedoAlt, faArrowAltCircleRight, faExternalLinkAlt, faBook, faListUl } from '@fortawesome/free-solid-svg-icons';
-import { ApiDocsComponent } from './components/docs/api-docs.component';
-import { DocsComponent } from './components/docs/docs.component';
-import { ApiDocsNavComponent } from './components/docs/api-docs-nav.component';
-import { NoSanitizePipe } from './shared/pipes/no-sanitize.pipe';
-import { CodeTemplateComponent } from './components/docs/code-template.component';
+  faLink, faList, faSearch, faCaretUp, faCaretDown, faTachometerAlt, faThList, faTint, faTv, faAngleDoubleDown, faSortUp, faAngleDoubleUp, faChevronDown,
+  faFileAlt, faRedoAlt, faArrowAltCircleRight, faExternalLinkAlt, faBook, faListUl, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TrademarkPolicyComponent } from './components/trademark-policy/trademark-policy.component';
@@ -93,20 +85,16 @@ import { BlockFeeRatesGraphComponent } from './components/block-fee-rates-graph/
     BisqMasterPageComponent,
     LiquidMasterPageComponent,
     TelevisionComponent,
-    BlockchainComponent,
     StartComponent,
-    BlockchainBlocksComponent,
     StatisticsComponent,
     TransactionComponent,
     BlockComponent,
     TransactionsListComponent,
     AddressComponent,
-    AmountComponent,
     LatestBlocksComponent,
     SearchFormComponent,
     TimeSpanComponent,
     AddressLabelsComponent,
-    MempoolBlocksComponent,
     FooterComponent,
     MempoolBlockComponent,
     FeeDistributionGraphComponent,
@@ -122,16 +110,11 @@ import { BlockFeeRatesGraphComponent } from './components/block-fee-rates-graph/
     FeesBoxComponent,
     DashboardComponent,
     DifficultyComponent,
-    ApiDocsComponent,
-    NoSanitizePipe,
-    CodeTemplateComponent,
     TermsOfServiceComponent,
     PrivacyPolicyComponent,
     TrademarkPolicyComponent,
     SponsorComponent,
     PushTransactionComponent,
-    DocsComponent,
-    ApiDocsNavComponent,
     AssetsNavComponent,
     AssetsFeaturedComponent,
     AssetGroupComponent,
@@ -213,5 +196,6 @@ export class AppModule {
     library.addIcons(faAngleLeft);
     library.addIcons(faBook);
     library.addIcons(faListUl);
+    library.addIcons(faDownload);
   }
 }

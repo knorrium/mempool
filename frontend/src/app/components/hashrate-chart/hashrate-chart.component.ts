@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { selectPowerOfTen } from 'src/app/bitcoin.utils';
 import { StorageService } from 'src/app/services/storage.service';
 import { MiningService } from 'src/app/services/mining.service';
+import { download } from 'src/app/shared/graphs.utils';
 
 @Component({
   selector: 'app-hashrate-chart',
@@ -43,6 +44,8 @@ export class HashrateChartComponent implements OnInit {
   hashrateObservable$: Observable<any>;
   isLoading = true;
   formatNumber = formatNumber;
+  timespan = '';
+  chartInstance: any = undefined;
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
@@ -74,6 +77,7 @@ export class HashrateChartComponent implements OnInit {
           if (!this.widget && !firstRun) {
             this.storageService.setValue('miningWindowPreference', timespan);
           }
+          this.timespan = timespan;
           firstRun = false;
           this.miningWindowPreference = timespan;
           this.isLoading = true;
@@ -114,23 +118,15 @@ export class HashrateChartComponent implements OnInit {
                   difficulty: diffFixed.map(val => [val.timestamp * 1000, val.difficulty]),
                 });
                 this.isLoading = false;
-
-                if (data.hashrates.length === 0) {
-                  this.cd.markForCheck();
-                  throw new Error();
-                }
               }),
               map((response) => {
                 const data = response.body;
                 return {
                   blockCount: parseInt(response.headers.get('x-total-count'), 10),
-                  currentDifficulty: Math.round(data.difficulty[data.difficulty.length - 1].difficulty * 100) / 100,
-                  currentHashrate: data.hashrates[data.hashrates.length - 1].avgHashrate,
+                  currentDifficulty: data.currentDifficulty,
+                  currentHashrate: data.currentHashrate,
                 };
               }),
-              retryWhen((errors) => errors.pipe(
-                delay(60000)
-              ))
             );
         }),
         share()
@@ -348,7 +344,29 @@ export class HashrateChartComponent implements OnInit {
     };
   }
 
+  onChartInit(ec) {
+    this.chartInstance = ec;
+  }
+
   isMobile() {
     return (window.innerWidth <= 767.98);
+  }
+
+  onSaveChart() {
+    // @ts-ignore
+    const prevBottom = this.chartOptions.grid.bottom;
+    const now = new Date();
+    // @ts-ignore
+    this.chartOptions.grid.bottom = 30;
+    this.chartOptions.backgroundColor = '#11131f';
+    this.chartInstance.setOption(this.chartOptions);
+    download(this.chartInstance.getDataURL({
+      pixelRatio: 2,
+      excludeComponents: ['dataZoom'],
+    }), `hashrate-difficulty-${this.timespan}-${Math.round(now.getTime() / 1000)}.svg`);
+    // @ts-ignore
+    this.chartOptions.grid.bottom = prevBottom;
+    this.chartOptions.backgroundColor = 'none';
+    this.chartInstance.setOption(this.chartOptions);
   }
 }

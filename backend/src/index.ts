@@ -151,6 +151,7 @@ class Server {
           logger.debug(msg);
         }
       }
+      await poolsUpdater.updatePoolsJson();
       await blocks.$updateBlocks();
       await memPool.$updateMempool();
       this.$runIndexingWhenReady();
@@ -174,8 +175,8 @@ class Server {
 
   async $resetHashratesIndexingState() {
     try {
-      await HashratesRepository.$setLatestRunTimestamp('last_hashrates_indexing', 0);
-      await HashratesRepository.$setLatestRunTimestamp('last_weekly_hashrates_indexing', 0);
+      await HashratesRepository.$setLatestRun('last_hashrates_indexing', 0);
+      await HashratesRepository.$setLatestRun('last_weekly_hashrates_indexing', 0);
     } catch (e) {
       logger.err(`Cannot reset hashrate indexing timestamps. Reason: ` + (e instanceof Error ? e.message : e));
     }
@@ -187,7 +188,6 @@ class Server {
     }
 
     try {
-      await poolsUpdater.updatePoolsJson();
       await blocks.$generateBlockDatabase();
       await mining.$generateNetworkHashrateHistory();
       await mining.$generatePoolHashrateHistory();
