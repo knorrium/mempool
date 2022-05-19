@@ -1,6 +1,12 @@
 name: Node Compatibility Test
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)    
+        required: false
+
 jobs:
   build-matrix:
     runs-on: ubuntu-latest
@@ -17,8 +23,15 @@ jobs:
       matrix:
         version: ${{ fromJson(needs.build-matrix.outputs.version_matrix) }}
     steps:
-    - name: checkout
+    - name: Clone Repository (Latest)
       uses: actions/checkout@v2
+      if: github.event.inputs.git-ref == ''
+      
+    - name: Clone Repository (Custom Ref)
+      uses: actions/checkout@v2
+      if: github.event.inputs.git-ref != ''
+      with:
+        ref: ${{ github.event.inputs.git-ref }}
     
     - name: setup node ${{ matrix.version }}
       uses: actions/setup-node@v2
