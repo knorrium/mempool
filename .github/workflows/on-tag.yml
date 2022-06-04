@@ -65,13 +65,13 @@ jobs:
             ${{ runner.os }}-buildx-
       
       - name: Build and push
-            uses: docker/build-push-action@v3
-            with:
-              push: false
-              platform: linux/amd64,linux/arm64,linux/arm/v7
-              tags: |
-                ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG
-                ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
-              cache-from: type=local,src=/tmp/.buildx-cache
-              cache-to: type=local,dest=/tmp/.buildx-cache-new
-              build-arg: commitHash=$SHORT_SHA
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          platform: linux/amd64,linux/arm64,linux/arm/v7
+          tags: |
+            ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG
+            ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+          build-arg: commitHash=$SHORT_SHA
