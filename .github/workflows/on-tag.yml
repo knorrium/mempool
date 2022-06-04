@@ -66,7 +66,7 @@ jobs:
 
       - name: Run Docker buildx for ${{ matrix.service }} against tag
         run: |
-          buildx build \
+          docker buildx build \
           --cache-from "type=gha ." \
           --cache-to "type=gha ." \
           --platform linux/amd64,linux/arm64,linux/arm/v7 \
