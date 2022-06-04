@@ -22,6 +22,8 @@ jobs:
           - frontend
           - backend
     runs-on: ubuntu-18.04
+      env:
+        BUILD_CACHE: /home/runner/.docker/buildkit
     name: Build and push to DockerHub
     steps:
       - name: Set env variables
@@ -46,6 +48,9 @@ jobs:
         with:
           ref: ${{ steps.vars.outputs.tag }}
 
+      - name: Compute cache key
+        run: echo "CACHE_KEY=$(git ls-files -s backend frontend | git hash-object --stdin)" >> $GITHUB_ENV
+
       - name: Init repo for Dockerization
         run: docker/init.sh "${{ steps.vars.outputs.tag }}"
 
@@ -60,16 +65,24 @@ jobs:
       - name: Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
 
-      - name: Cache Docker layers
+      # - name: Cache Docker layers
+      #   uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: /tmp/.buildx-cache
+      #     key: ${{ runner.os }}-buildx-${{ github.sha }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-buildx-${{ github.sha }}
+      #       ${{ runner.os }}-buildx-
+
+      - name: Cache docker layers
         uses: actions/cache@v3
-        id: cache
         with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          path: ${{ env.BUILD_CACHE }}
+          key: cache-${{ env.CACHE_KEY }}
           restore-keys: |
-            ${{ runner.os }}-buildx-${{ github.sha }}
-            ${{ runner.os }}-buildx-
-      
+            cache-
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
