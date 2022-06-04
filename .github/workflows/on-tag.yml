@@ -68,7 +68,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: false
-          platform: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: |
+            linux/amd64
+            linux/arm64
+            linux/arm/v7
           tags: |
             ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG
             ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
