@@ -63,14 +63,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-${{ github.sha }}
             ${{ runner.os }}-buildx-
-
-      - name: Run Docker buildx for ${{ matrix.service }} against tag
-        run: |
-          docker buildx build \
-          --cache-from "type=gha" \
-          --cache-to "type=gha" \
-          --platform linux/amd64,linux/arm64,linux/arm/v7 \
-          --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG \
-          --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest \
-          --output "type=registry" ./${{ matrix.service }}/ \
-          --build-arg commitHash=$SHORT_SHA
+      
+      - name: Build and push
+            uses: docker/build-push-action@v3
+            with:
+              push: false
+              platform: linux/amd64,linux/arm64,linux/arm/v7
+              tags: |
+                ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG
+                ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
+              cache-from: type=local,src=/tmp/.buildx-cache
+              cache-to: type=local,dest=/tmp/.buildx-cache-new
+              build-arg: commitHash=$SHORT_SHA
