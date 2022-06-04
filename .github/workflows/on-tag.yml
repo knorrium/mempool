@@ -74,6 +74,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: false
+          file: ${{ matrix.service }/Dockerfile
           platforms: |
             linux/amd64
             linux/arm64
