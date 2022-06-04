@@ -4,6 +4,7 @@ env:
   TAG_FMT: '^refs/tags/(((.?[0-9]+){3,4}))$'
   DOCKER_BUILDKIT: 1
   COMPOSE_DOCKER_CLI_BUILD: 0
+  BUILD_CACHE: /home/runner/.docker/buildkit
 
 on:
   push:
@@ -22,8 +23,6 @@ jobs:
           - frontend
           - backend
     runs-on: ubuntu-18.04
-      env:
-        BUILD_CACHE: /home/runner/.docker/buildkit
     name: Build and push to DockerHub
     steps:
       - name: Set env variables
