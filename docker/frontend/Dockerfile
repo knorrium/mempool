@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} node:16.15.0-buster-slim AS builder
+FROM node:16.15.0-buster-slim AS builder
 
 ARG commitHash
 ENV DOCKER_COMMIT_HASH=${commitHash}
@@ -11,7 +11,7 @@ RUN apt-get install -y build-essential rsync
 RUN npm i
 RUN npm run build
 
-FROM --platform=${BUILDPLATFORM} nginx:1.17.8-alpine
+FROM nginx:1.17.8-alpine
 
 WORKDIR /patch
 
