@@ -108,4 +108,4 @@ jobs:
 
       - name: Start frontend
         run: |
-          docker run ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
+          docker run ${{ secrets.DOCKER_HUB_USER }}/frontend:latest -d
