@@ -77,9 +77,9 @@ jobs:
       #     load: true
       #     tags: ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
 
-      - name: Inspect
-        run: |
-          docker image inspect ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
+      # - name: Inspect
+      #   run: |
+      #     docker image inspect ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
 
       - name: Upload image
         uses: actions/upload-artifact@v2
