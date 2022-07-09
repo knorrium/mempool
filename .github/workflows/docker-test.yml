@@ -98,7 +98,7 @@ jobs:
 
       - name: Start frontend
         run: |
-          docker run -d -p 81:80 --name frontend ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
+          docker run -d -p 81:8080 --name frontend ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
 
       - name: Check frontend is running
         run: |
@@ -127,7 +127,7 @@ jobs:
 
       - name: nginx-mempool-conf
         run: |
-          docker exec -t frontend cat /etc/nginx-mempool.conf
+          docker exec -t frontend cat /etc/nginx/nginx-mempool.conf
 
       # - name: List remote files
       # run: |
