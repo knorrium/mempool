@@ -127,7 +127,7 @@ jobs:
 
       - name: nginx-mempool-conf
         run: |
-          docker exec -t frontend cat /etc/nginx/nginx-mempool.conf
+          docker exec -t frontend cat /etc/nginx/conf.d/nginx-mempool.conf
 
       # - name: List remote files
       # run: |
