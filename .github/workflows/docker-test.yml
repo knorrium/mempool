@@ -98,7 +98,7 @@ jobs:
 
       - name: Start frontend
         run: |
-          docker run -d -p 80:80 ${{ secrets.DOCKER_HUB_USER }}/frontend:latest &
+          docker run -d -p 80:80 ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
 
       - name: Start frontend
         run: |
