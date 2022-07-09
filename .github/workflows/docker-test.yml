@@ -104,7 +104,8 @@ jobs:
         run: |
           docker load --input /tmp/frontend.tar
           docker image ls -a
+          docker image inspect ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
 
       - name: Start frontend
         run: |
-          docker run frontend:latest
+          docker run ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
