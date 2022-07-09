@@ -64,6 +64,10 @@ jobs:
           name: frontend
           path: /tmp/frontend.tar
 
+      - name: List folder
+        run: |
+          ls -lasFR /tmp/frontend.tar
+
       - name: Move cache
         run: |
           rm -rf /tmp/.buildx-cache
@@ -81,6 +85,11 @@ jobs:
         with:
           name: frontend
           path: /tmp/frontend.tar
+
+      - name: List folder
+        run: |
+          ls -lasFR /tmp/frontend.tar
+          ls -lasFR /tmp
 
       - name: Load image
         run: |
