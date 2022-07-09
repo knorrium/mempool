@@ -122,4 +122,5 @@ jobs:
           docker exec -it frontend ls -R /var/www/
 
       - name: curl
+        run: |
           curl -vvv http://localhost:81/
