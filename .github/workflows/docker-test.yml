@@ -119,7 +119,7 @@ jobs:
 
       - name: List remote files
         run: |
-          docker exec -it frontend ls -R /var/www/
+          docker exec -t frontend "ls -R /var/www/"
 
       - name: curl
         run: |
