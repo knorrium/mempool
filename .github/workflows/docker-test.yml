@@ -127,4 +127,8 @@ jobs:
 
       - name: curl
         run: |
-          curl -vvv http://localhost:81/
+          curl -vvv http://localhost:81/ --silent
+
+      - name: Check logs
+        run: |
+          docker logs frontend
