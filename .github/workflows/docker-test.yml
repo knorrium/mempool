@@ -140,4 +140,4 @@ jobs:
 
       - name: Check logs
         run: |
-          docker logs --tail frontend
+          docker logs
