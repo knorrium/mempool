@@ -141,3 +141,90 @@ jobs:
       - name: Check logs
         run: |
           docker logs
+
+  cypress:
+    needs: use-image
+    if: "!contains(github.event.pull_request.labels.*.name, 'ops') && !contains(github.head_ref, 'ops/')"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+        os: ["ubuntu-latest"]
+        browser: [chrome]
+    name: E2E tests on ${{ matrix.browser }} - ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.15.0
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+      - name: ${{ matrix.browser }} browser tests (Mempool)
+        uses: cypress-io/github-action@v4
+        with:
+          tag: ${{ github.event_name }}
+          working-directory: frontend
+          wait-on: "http://localhost:81"
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          config: baseUrl=http://localhost:81/
+          spec: |
+            cypress/e2e/mainnet/*.spec.ts
+            cypress/e2e/signet/*.spec.ts
+            cypress/e2e/testnet/*.spec.ts
+          group: Tests on ${{ matrix.browser }} (Mempool)
+          browser: ${{ matrix.browser }}
+          ci-build-id: "${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}"
+        env:
+          COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+
+      - name: ${{ matrix.browser }} browser tests (Liquid)
+        uses: cypress-io/github-action@v4
+        if: always()
+        with:
+          tag: ${{ github.event_name }}
+          working-directory: frontend
+          wait-on: "http://localhost:81"
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          config: baseUrl=http://localhost:81/
+          spec: |
+            cypress/e2e/liquid/liquid.spec.ts
+            cypress/e2e/liquidtestnet/liquidtestnet.spec.ts
+          group: Tests on ${{ matrix.browser }} (Liquid)
+          browser: ${{ matrix.browser }}
+          ci-build-id: "${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}"
+        env:
+          COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+
+      - name: ${{ matrix.browser }} browser tests (Bisq)
+        uses: cypress-io/github-action@v4
+        if: always()
+        with:
+          tag: ${{ github.event_name }}
+          working-directory: frontend
+          wait-on: "http://localhost:81"
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          config: baseUrl=http://localhost:81/
+          spec: cypress/e2e/bisq/bisq.spec.ts
+          group: Tests on ${{ matrix.browser }} (Bisq)
+          browser: ${{ matrix.browser }}
+          ci-build-id: "${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}"
+        env:
+          COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
