@@ -104,6 +104,11 @@ jobs:
         run: |
           docker ps
 
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "30s"
+
       - name: Start frontend
         run: |
           docker logs frontend
