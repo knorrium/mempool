@@ -104,12 +104,22 @@ jobs:
         run: |
           docker ps
 
-      - name: Sleep for 30 seconds
+      - name: Sleep for 35 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: "30s"
+          time: "35s"
 
-      - name: Start frontend
+      - name: Check frontend is running 2
+        run: |
+          docker ps
+
+      - name: Check logs
         run: |
           docker logs frontend
+
+      - name: List remote files
+        run: |
+          docker exec -it frontend ls -R /var/www/
+
+      - name: curl
           curl -vvv http://localhost:81/
