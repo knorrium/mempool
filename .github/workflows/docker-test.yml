@@ -20,12 +20,12 @@ jobs:
     runs-on: ubuntu-18.04
     name: Build and run
     steps:
-      - name: Set env variables
-        run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+      # - name: Set env variables
+      # run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
 
-      - name: Show set environment variables
-        run: |
-          printf "      TAG: %s\n"  "$TAG"
+      # - name: Show set environment variables
+      # run: |
+      # printf "      TAG: %s\n"  "$TAG"
 
       - name: Add SHORT_SHA env property with commit short sha
         run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
@@ -65,9 +65,9 @@ jobs:
           --cache-from "type=local,src=/tmp/.buildx-cache" \
           --cache-to "type=local,dest=/tmp/.buildx-cache" \
           --platform linux/amd64,linux/arm64,linux/arm/v7 \
-          --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG \
+          --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$SHORT_SHA \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest \
-          --output "type=registry" ./${{ matrix.service }}/ \
+          --output "type=docker" ./${{ matrix.service }}/ \
           --build-arg commitHash=$SHORT_SHA
 
       - name: Build
