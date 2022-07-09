@@ -51,7 +51,7 @@ jobs:
         run: |
           docker buildx build \
           --cache-from "type=local,src=/tmp/.buildx-cache" \
-          --cache-to "type=local,dest=/tmp/.buildx-cache" \
+          --cache-to "type=local,dest=/tmp/.buildx-cache-new" \
           --platform linux/amd64 \
           --tag ${{ secrets.DOCKER_HUB_USER }}/frontend:$SHORT_SHA \
           --tag ${{ secrets.DOCKER_HUB_USER }}/frontend:latest \
