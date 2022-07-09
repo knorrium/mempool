@@ -84,12 +84,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: frontend
-          path: /tmp/frontend.tar
+          path: /tmp
 
       - name: List folder
         run: |
-          ls -lasFR /tmp/frontend.tar/
-          ls -lasFR /tmp
+          ls -lasFR /tmp/frontend.tar
 
       - name: Load image
         run: |
