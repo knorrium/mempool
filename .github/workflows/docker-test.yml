@@ -98,7 +98,7 @@ jobs:
 
       - name: Start frontend
         run: |
-          docker run -d -p 80:80 --name frontend ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
+          docker run -d -p 81:80 --name frontend ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
 
       - name: Check frontend is running
         run: |
@@ -107,4 +107,4 @@ jobs:
       - name: Start frontend
         run: |
           docker logs frontend
-          curl -vvv http://localhost/api/v1/backend-info
+          curl -vvv http://localhost:81/
