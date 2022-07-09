@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get install -y build-essential rsync
 RUN npm install --omit=dev --omit=optional
 
-RUN if [[ -z "$allNetworks" ]] ; then npm run config:defaults:all ; else echo "building only for mainnet"; fi
+RUN if [[ "${allNetworks}" -eq "true" ]]; then npm run config:defaults:all; else npm run config:defaults:mainnet; fi
 
 RUN npm run build
 
