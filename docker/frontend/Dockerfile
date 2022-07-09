@@ -1,6 +1,8 @@
 FROM node:16.16.0-buster-slim AS builder
 
 ARG commitHash
+ARG allNetworks=false
+
 ENV DOCKER_COMMIT_HASH=${commitHash}
 ENV CYPRESS_INSTALL_BINARY=0
 
@@ -9,6 +11,12 @@ COPY . .
 RUN apt-get update
 RUN apt-get install -y build-essential rsync
 RUN npm install --omit=dev --omit=optional
+RUN if [ ${allNetworks} = "true" ]; then \
+        npm run
+  else \
+        echo "Building only for mainnet"
+  fi
+
 RUN npm run build
 
 FROM nginx:1.17.8-alpine
