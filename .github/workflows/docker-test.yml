@@ -67,7 +67,7 @@ jobs:
           --platform linux/amd64 \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$SHORT_SHA \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest \
-          --output "type=docker,dest=/tmp/${{ matrix.service }}.tar" ./${{ matrix.service }}/ \
+          --output "type=docker,dest=- . > /tmp/${{ matrix.service }}.tar" ./${{ matrix.service }}/ \
           --build-arg commitHash=$SHORT_SHA
 
       # - name: Build
@@ -86,6 +86,11 @@ jobs:
         with:
           name: ${{ matrix.service }}
           path: /tmp/${{ matrix.service }}.tar
+
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   use-image:
     runs-on: ubuntu-latest
