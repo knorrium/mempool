@@ -75,7 +75,7 @@ jobs:
         with:
           context: .
           load: true
-          tags: ${{ matrix.service }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
 
       - name: Inspect
         run: |
