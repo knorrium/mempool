@@ -75,8 +75,8 @@ jobs:
         with:
           context: .
           load: true
-          tags: myimage:latest
+          tags: ${{ matrix.service }}:latest
 
       - name: Inspect
         run: |
-          docker image inspect ${{ secrets.DOCKER_HUB_USER }}/frontend:latest
+          docker image inspect ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
