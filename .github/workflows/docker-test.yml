@@ -56,7 +56,8 @@ jobs:
           --tag ${{ secrets.DOCKER_HUB_USER }}/frontend:$SHORT_SHA \
           --tag ${{ secrets.DOCKER_HUB_USER }}/frontend:latest \
           --output "type=docker,dest=/tmp/frontend.tar" ./frontend/ \
-          --build-arg commitHash=$SHORT_SHA
+          --build-arg commitHash=$SHORT_SHA \
+          --build-arg allNetworks=true
 
       - name: Upload image
         uses: actions/upload-artifact@v2
@@ -139,4 +140,4 @@ jobs:
 
       - name: Check logs
         run: |
-          docker logs frontend
+          docker logs --tail frontend
