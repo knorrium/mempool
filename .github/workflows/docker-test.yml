@@ -114,10 +114,6 @@ jobs:
         run: |
           docker ps
 
-      - name: Check logs
-        run: |
-          docker logs frontend
-
       - name: List remote files
         run: |
           docker exec -t frontend ls -R /var/www
