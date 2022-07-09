@@ -70,12 +70,12 @@ jobs:
           --output "type=docker" ./${{ matrix.service }}/ \
           --build-arg commitHash=$SHORT_SHA
 
-      - name: Build
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          load: true
-          tags: ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
+      # - name: Build
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: .
+      #     load: true
+      #     tags: ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest
 
       - name: Inspect
         run: |
