@@ -134,6 +134,9 @@ jobs:
         run: |
           curl -vvv http://localhost:81/ --silent
 
+      - name: Checkout project
+        uses: actions/checkout@629c2de402a417ea7690ca6ce3f33229e27606a5 # v2
+
       - name: Chrome browser tests (Mempool)
         uses: cypress-io/github-action@v4
         with:
