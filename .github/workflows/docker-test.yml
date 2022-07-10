@@ -57,7 +57,8 @@ jobs:
           --tag ${{ secrets.DOCKER_HUB_USER }}/frontend:latest \
           --output "type=docker,dest=/tmp/frontend.tar" ./frontend/ \
           --build-arg commitHash=$SHORT_SHA \
-          --build-arg allNetworks=true
+          --build-arg allNetworks=true \
+          --build-arg proxy=ninja
 
       - name: Upload image
         uses: actions/upload-artifact@v2

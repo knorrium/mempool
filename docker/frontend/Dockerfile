@@ -14,6 +14,9 @@ RUN npm install --omit=dev --omit=optional
 
 RUN if [ "${allNetworks}" = "true" ]; then npm run config:defaults:all; else npm run config:defaults:mainnet; fi
 
+RUN if [ "${proxy}" = "ninja" ]; then rm nginx-mempool.conf && nginx-mempool.ninja.conf nginx-mempool.conf; else cat nginx-mempool.conf; fi
+
+
 RUN npm run build
 
 FROM nginx:1.17.8-alpine
