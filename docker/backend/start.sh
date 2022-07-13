@@ -169,4 +169,4 @@ sed -i "s!__EXTERNAL_DATA_SERVER_LIQUID_ONION__!${__EXTERNAL_DATA_SERVER_LIQUID_
 sed -i "s!__EXTERNAL_DATA_SERVER_BISQ_URL__!${__EXTERNAL_DATA_SERVER_BISQ_URL__}!g" mempool-config.json
 sed -i "s!__EXTERNAL_DATA_SERVER_BISQ_ONION__!${__EXTERNAL_DATA_SERVER_BISQ_ONION__}!g" mempool-config.json
 
-node /backend/dist/index.js
+node /backend/package/index.js
