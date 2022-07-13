@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import path from "path";
 import config from '../config';
 import logger from '../logger';
 import PricesRepository from '../repositories/PricesRepository';
@@ -158,7 +159,7 @@ class PriceUpdater {
     const existingPriceTimes = await PricesRepository.$getPricesTimes();
 
     // Insert MtGox weekly prices
-    const pricesJson: any[] = JSON.parse(fs.readFileSync('./src/tasks/price-feeds/mtgox-weekly.json').toString());
+    const pricesJson: any[] = JSON.parse(fs.readFileSync(path.join(__dirname, 'mtgox-weekly.json')).toString());
     const prices = this.getEmptyPricesObj();
     let insertedCount: number = 0;
     for (const price of pricesJson) {
