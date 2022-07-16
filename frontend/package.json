@@ -1,6 +1,6 @@
 {
   "name": "mempool-frontend",
-  "version": "2.4.1-dev",
+  "version": "2.5.0-dev",
   "description": "Bitcoin mempool visualizer and blockchain explorer backend",
   "license": "GNU Affero General Public License v3.0",
   "homepage": "https://mempool.space",
@@ -65,7 +65,7 @@
   "dependencies": {
     "@angular-devkit/build-angular": "~13.3.7",
     "@angular/animations": "~13.3.10",
-    "@angular/cli": "~13.3.7",
+    "@angular/cli": "~14.0.6",
     "@angular/common": "~13.3.10",
     "@angular/compiler": "~13.3.10",
     "@angular/core": "~13.3.10",
