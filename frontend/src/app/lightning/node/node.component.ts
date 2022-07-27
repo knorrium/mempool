@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { SeoService } from 'src/app/services/seo.service';
+import { getFlagEmoji } from 'src/app/shared/graphs.utils';
 import { LightningApiService } from '../lightning-api.service';
 
 @Component({
@@ -17,6 +18,10 @@ export class NodeComponent implements OnInit {
   publicKey$: Observable<string>;
   selectedSocketIndex = 0;
   qrCodeVisible = false;
+  channelsListMode = 'list';
+  channelsListStatus: string;
+  error: Error;
+  publicKey: string;
 
   constructor(
     private lightningApiService: LightningApiService,
@@ -28,6 +33,7 @@ export class NodeComponent implements OnInit {
     this.node$ = this.activatedRoute.paramMap
       .pipe(
         switchMap((params: ParamMap) => {
+          this.publicKey = params.get('public_key');
           return this.lightningApiService.getNode$(params.get('public_key'));
         }),
         map((node) => {
@@ -46,6 +52,7 @@ export class NodeComponent implements OnInit {
             } else if (socket.indexOf('onion') > -1) {
               label = 'Tor';
             }
+            node.flag = getFlagEmoji(node.iso_code);
             socketsObject.push({
               label: label,
               socket: node.public_key + '@' + socket,
@@ -54,6 +61,13 @@ export class NodeComponent implements OnInit {
           node.socketsObject = socketsObject;
           return node;
         }),
+        catchError(err => {
+          this.error = err;
+          return [{
+            alias: this.publicKey,
+            public_key: this.publicKey,
+          }];
+        })
       );
   }
 
@@ -61,4 +75,15 @@ export class NodeComponent implements OnInit {
     this.selectedSocketIndex = index;
   }
 
+  channelsListModeChange(e) {
+    if (e.target.checked === true) {
+      this.channelsListMode = 'map';
+    } else {
+      this.channelsListMode = 'list';
+    }
+  }
+
+  onChannelsListStatusChanged(e) {
+    this.channelsListStatus = e;
+  }
 }

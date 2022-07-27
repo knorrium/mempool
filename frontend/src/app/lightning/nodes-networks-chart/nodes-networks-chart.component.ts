@@ -59,9 +59,9 @@ export class NodesNetworksChartComponent implements OnInit {
     let firstRun = true;
 
     if (this.widget) {
-      this.miningWindowPreference = '1y';
+      this.miningWindowPreference = '3y';
     } else {
-      this.seoService.setTitle($localize`Nodes per network`);
+      this.seoService.setTitle($localize`Lightning nodes per network`);
       this.miningWindowPreference = this.miningService.getDefaultTimespan('all');
     }
     this.radioGroupForm = this.formBuilder.group({ dateSpan: this.miningWindowPreference });

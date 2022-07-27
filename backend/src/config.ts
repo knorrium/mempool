@@ -104,6 +104,7 @@ interface IConfig {
     ENABLED: boolean;
     GEOLITE2_CITY: string;
     GEOLITE2_ASN: string;
+    GEOIP2_ISP: string;
   },
 }
 
@@ -208,7 +209,8 @@ const defaults: IConfig = {
   "MAXMIND": {
     'ENABLED': false,
     "GEOLITE2_CITY": "/usr/local/share/GeoIP/GeoLite2-City.mmdb",
-    "GEOLITE2_ASN": "/usr/local/share/GeoIP/GeoLite2-ASN.mmdb"
+    "GEOLITE2_ASN": "/usr/local/share/GeoIP/GeoLite2-ASN.mmdb",
+    "GEOIP2_ISP": "/usr/local/share/GeoIP/GeoIP2-ISP.mmdb"
   },
 };
 
