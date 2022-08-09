@@ -20,7 +20,7 @@
   ],
   "main": "index.ts",
   "scripts": {
-    "ng": "./node_modules/@angular/cli/bin/ng.js",
+    "ng": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng.js",
     "tsc": "./node_modules/typescript/bin/tsc",
     "i18n-extract-from-source": "./node_modules/@angular/cli/bin/ng extract-i18n --out-file ./src/locale/messages.xlf",
     "i18n-pull-from-transifex": "tx pull -a --parallel --minimum-perc 1 --force",
