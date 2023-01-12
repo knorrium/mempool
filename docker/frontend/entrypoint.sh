@@ -10,6 +10,15 @@ cp /etc/nginx/nginx.conf /patch/nginx.conf
 sed -i "s/__MEMPOOL_FRONTEND_HTTP_PORT__/${__MEMPOOL_FRONTEND_HTTP_PORT__}/g" /patch/nginx.conf
 cat /patch/nginx.conf > /etc/nginx/nginx.conf
 
+# Add the lightning routes
+cp /etc/nginx/conf.d/nginx-mempool.conf /patch/nginx-mempool.conf
+cat >> /patch/nginx-mempool.conf <<EOF
+  location /api/v1/lightning {
+      proxy_pass http://127.0.0.1:8993;
+  }
+EOF
+cat /patch/nginx-mempool.conf /etc/nginx/conf.d/nginx-mempool.conf
+
 # Runtime overrides - read env vars defined in docker compose
 
 __TESTNET_ENABLED__=${TESTNET_ENABLED:=false}
