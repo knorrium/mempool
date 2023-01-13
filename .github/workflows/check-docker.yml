@@ -13,12 +13,10 @@ jobs:
 
       - name: "Execute start script"
         run: |
+          cd docker/backend
           head -n -2 start.sh | sh
-        with:
-          path: "docker/backend"
 
       - name: "Check output"
         run: |
+          cd docker/backend
           cat mempool-config.json
-        with:
-          path: "docker/backend"
