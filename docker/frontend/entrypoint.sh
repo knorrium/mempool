@@ -11,10 +11,12 @@ sed -i "s/__MEMPOOL_FRONTEND_HTTP_PORT__/${__MEMPOOL_FRONTEND_HTTP_PORT__}/g" /p
 cat /patch/nginx.conf > /etc/nginx/nginx.conf
 
 # Add the lightning routes
+__LIGHTNING_BACKEND_HOST__=${APP_MEMPOOL_LIGHTNING_API_IP:=127.0.0.1}
+__LIGHTNING_BACKEND_PORT__=${APP_MEMPOOL_LIGHTNING_API_PORT:=8993}
 cp /etc/nginx/conf.d/nginx-mempool.conf /patch/nginx-mempool.conf
 cat >> /patch/nginx-mempool.conf <<EOF
   location /api/v1/lightning {
-      proxy_pass http://127.0.0.1:8993;
+      proxy_pass http://${__LIGHTNING_BACKEND_HOST__}:${__LIGHTNING_BACKEND_PORT__}/api/v1/lightning;
   }
 EOF
 cat /patch/nginx-mempool.conf /etc/nginx/conf.d/nginx-mempool.conf
