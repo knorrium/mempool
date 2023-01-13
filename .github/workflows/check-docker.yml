@@ -16,6 +16,11 @@ jobs:
           cd docker/backend
           head -n -2 start.sh | sh
 
+      - name: "Print replacement results"
+        run: |
+          cd docker/backend
+          cat mempool-config.json
+
       - name: "Check output"
         run: |
           cd docker/backend
