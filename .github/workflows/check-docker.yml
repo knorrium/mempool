@@ -19,4 +19,4 @@ jobs:
       - name: "Check output"
         run: |
           cd docker/backend
-          cat mempool-config.json | grep -q __ | test $? -eq 0
+          cat mempool-config.json | grep -q __ | test $? -eq 1
