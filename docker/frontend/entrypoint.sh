@@ -8,6 +8,7 @@ sed -i "s/__MEMPOOL_BACKEND_MAINNET_HTTP_PORT__/${__MEMPOOL_BACKEND_MAINNET_HTTP
 
 cp /etc/nginx/nginx.conf /patch/nginx.conf
 sed -i "s/__MEMPOOL_FRONTEND_HTTP_PORT__/${__MEMPOOL_FRONTEND_HTTP_PORT__}/g" /patch/nginx.conf
+cat /patch/nginx.conf > /etc/nginx/nginx.conf
 
 # Add Lightning Routes - variables can be defined in Docker compose
 
