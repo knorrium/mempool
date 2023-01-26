@@ -13,13 +13,15 @@ sed -i "s/__MEMPOOL_FRONTEND_HTTP_PORT__/${__MEMPOOL_FRONTEND_HTTP_PORT__}/g" /p
 
 __MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__=${BACKEND_MAINNET_LIGHTNING_HOST:=127.0.0.1}
 __MEMPOOL_BACKEND_LIGHTNING_HTTP_PORT__=${BACKEND_MAINNET_LIGHTNING_PORT:=8993}
-cat >> /patch/nginx.conf <<EOF
+cp /etc/nginx/conf.d/nginx-mempool.conf /patch/nginx-mempool.conf
+
+cat >> /patch/nginx-mempool.conf <<EOF
   location /api/v1/lightning {
       proxy_pass http://${__MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__}:${BACKEND_MAINNET_LIGHTNING_PORT};
   }
 EOF
 
-cat /patch/nginx.conf > /etc/nginx/nginx.conf
+cat /patch/nginx-mempool.conf >> /etc/nginx/conf.d/nginx-mempool.conf
 
 # Runtime overrides - read env vars defined in docker compose
 
