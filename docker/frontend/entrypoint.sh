@@ -8,6 +8,17 @@ sed -i "s/__MEMPOOL_BACKEND_MAINNET_HTTP_PORT__/${__MEMPOOL_BACKEND_MAINNET_HTTP
 
 cp /etc/nginx/nginx.conf /patch/nginx.conf
 sed -i "s/__MEMPOOL_FRONTEND_HTTP_PORT__/${__MEMPOOL_FRONTEND_HTTP_PORT__}/g" /patch/nginx.conf
+
+# Add Lightning Routes - variables can be defined in Docker compose
+
+__MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__=${BACKEND_MAINNET_LIGHTNING_HOST:=127.0.0.1}
+__MEMPOOL_BACKEND_LIGHTNING_HTTP_PORT__=${BACKEND_MAINNET_LIGHTNING_PORT:=8993}
+cat >> /patch/nginx.conf <<EOF
+  location /api/v1/lightning {
+      proxy_pass http://${__MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__}:${BACKEND_MAINNET_LIGHTNING_PORT};
+  }
+EOF
+
 cat /patch/nginx.conf > /etc/nginx/nginx.conf
 
 # Runtime overrides - read env vars defined in docker compose
@@ -58,6 +69,11 @@ export __LIGHTNING__
 export __MAINNET_BLOCK_AUDIT_START_HEIGHT__
 export __TESTNET_BLOCK_AUDIT_START_HEIGHT__
 export __SIGNET_BLOCK_AUDIT_START_HEIGHT__
+
+# Export Lightning variables for completeness
+
+export __MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__
+export __MEMPOOL_BACKEND_LIGHTNING_HTTP_PORT__
 
 folder=$(find /var/www/mempool -name "config.js" | xargs dirname)
 echo ${folder}
