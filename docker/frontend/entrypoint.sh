@@ -17,11 +17,11 @@ cp /etc/nginx/conf.d/nginx-mempool.conf /patch/nginx-mempool.conf
 
 cat >> /patch/nginx-mempool.conf <<EOF
   location /api/v1/lightning {
-      proxy_pass http://${__MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__}:${BACKEND_MAINNET_LIGHTNING_PORT};
+      proxy_pass http://${__MEMPOOL_BACKEND_LIGHTNING_HTTP_HOST__}:${__MEMPOOL_BACKEND_LIGHTNING_HTTP_PORT__};
   }
 EOF
 
-cat /patch/nginx-mempool.conf >> /etc/nginx/conf.d/nginx-mempool.conf
+cat /patch/nginx-mempool.conf > /etc/nginx/conf.d/nginx-mempool.conf
 
 # Runtime overrides - read env vars defined in docker compose
 
