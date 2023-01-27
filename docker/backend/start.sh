@@ -222,7 +222,7 @@ sed -i "s!__CLIGHTNING_SOCKET__!${__CLIGHTNING_SOCKET__}!g" mempool-config.json
 # MAXMIND
 sed -i "s!__MAXMIND_ENABLED__!${__MAXMIND_ENABLED__}!g" mempool-config.json
 sed -i "s!__MAXMIND_GEOLITE2_CITY__!${__MAXMIND_GEOLITE2_CITY__}!g" mempool-config.json
-sed -i "s!__MAXMIND_GEOLITE2_ASN__!${__MAXMIND_GEO2LITE2_ASN__}!g" mempool-config.json
+sed -i "s!__MAXMIND_GEOLITE2_ASN__!${__MAXMIND_GEOLITE2_ASN__}!g" mempool-config.json
 sed -i "s!__MAXMIND_GEOIP2_ISP__!${__MAXMIND_GEOIP2_ISP__}!g" mempool-config.json
 
 node /backend/package/index.js
