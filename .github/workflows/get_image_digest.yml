@@ -1,11 +1,13 @@
+name: 'Print images digest'
+
 on:
   workflow_dispatch:
-  inputs:
-    version:
-      description: 'Image Version'
-      required: true
-      default: 'latest'
-      type: 
+    inputs:
+      version:
+        description: 'Image Version'
+        required: true
+        default: 'latest'
+        type: string 
 jobs:
   print-images-sha:
     runs-on: 'ubuntu-latest'
