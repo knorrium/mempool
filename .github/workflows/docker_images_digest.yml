@@ -1,3 +1,5 @@
+name: 'Print images digest'
+
 on:
   workflow_dispatch:
     inputs:
