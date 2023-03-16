@@ -21,4 +21,4 @@ jobs:
         run: |
           sh ./docker/scripts/get_image_digest.sh $VERSION
         env: 
-          VERSION: ${{ githug.event.inputs.version }}
+          VERSION: ${{ github.event.inputs.version }}
