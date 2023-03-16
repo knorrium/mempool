@@ -8,15 +8,17 @@ on:
       type: 
 jobs:
   print-images-sha:
-    runs-on: ubuntu-latest
+    runs-on: 'ubuntu-latest'
+    name: Print digest for images
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           path: digest
+
       - name: Run script
         working-directory: digest
-        - run: |
-            sh ./docker/scripts/get_image_digest.sh $VERSION
-          env: 
-            VERSION: ${{ inputs.version }}
+        run: |
+          sh ./docker/scripts/get_image_digest.sh $VERSION
+        env: 
+          VERSION: ${{ inputs.version }}
