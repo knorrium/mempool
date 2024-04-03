@@ -25,6 +25,7 @@ RUN npm install --omit=dev --omit=optional
 RUN pwd
 RUN ls -laSFR
 WORKDIR /build
+RUN cat package.json
 RUN npm run package
 
 FROM node:20.12.0-buster-slim
