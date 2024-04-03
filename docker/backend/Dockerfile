@@ -3,9 +3,6 @@ FROM node:20.12.0-buster-slim AS builder
 ARG commitHash
 ENV MEMPOOL_COMMIT_HASH=${commitHash}
 
-WORKDIR /build
-COPY . .
-
 RUN apt-get update
 RUN apt-get install -y build-essential python3 pkg-config curl ca-certificates
 
@@ -13,6 +10,9 @@ RUN apt-get install -y build-essential python3 pkg-config curl ca-certificates
 RUN CPU_ARCH=$(uname -m); if [ "$CPU_ARCH" = "armv7l" ]; then c_rehash; fi
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
+
+WORKDIR /build
+COPY . .
 
 RUN cd backend && npm install --omit=dev --omit=optional
 RUN cd backend && npm run build
