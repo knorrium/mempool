@@ -16,12 +16,12 @@ RUN CPU_ARCH=$(uname -m); if [ "$CPU_ARCH" = "armv7l" ]; then c_rehash; fi
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
 
-COPY --from=backend . ./*
+COPY --from=backend . .
 COPY --from=rustgbt . ../rust/
 RUN pwd
 RUN ls -laSFR
 RUN ls .. -lasF
-ENV FD=/build
+ENV FD=/build/rust-gbt
 RUN npm install --omit=dev --omit=optional
 RUN pwd
 RUN ls -laSFR
