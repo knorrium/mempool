@@ -11,10 +11,10 @@ RUN CPU_ARCH=$(uname -m); if [ "$CPU_ARCH" = "armv7l" ]; then c_rehash; fi
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
 
-WORKDIR /
-COPY backend/* ./backend
-COPY rust/* ./rust
+COPY . .
 
+RUN pwd
+RUN ls -laSFR
 RUN cd backend && npm install --omit=dev --omit=optional
 RUN cd backend && npm run build
 RUN cd backend && npm run package
