@@ -13,7 +13,7 @@ RUN apt-get install -y build-essential python3 pkg-config curl ca-certificates
 RUN CPU_ARCH=$(uname -m); if [ "$CPU_ARCH" = "armv7l" ]; then c_rehash; fi
 #RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 #Workaround to run on github actions from https://github.com/rust-lang/rustup/issues/2700#issuecomment-1367488985
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
 
 COPY --from=rustgbt . ../rust
