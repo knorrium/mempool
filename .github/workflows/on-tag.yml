@@ -102,5 +102,6 @@ jobs:
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:$TAG \
           --tag ${{ secrets.DOCKER_HUB_USER }}/${{ matrix.service }}:latest \
           --build-context rustgbt=./rust \
+          --build-context backend=./backend \
           --output "type=registry" ./${{ matrix.service }}/ \
           --build-arg commitHash=$SHORT_SHA
