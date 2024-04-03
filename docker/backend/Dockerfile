@@ -12,10 +12,13 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
 
 WORKDIR /build
-COPY ./rust ..
-
 RUN pwd
 RUN ls -laSFR
+
+COPY ../rust ..
+RUN pwd
+RUN ls -laSFR
+
 RUN npm install --omit=dev --omit=optional
 RUN npm run build
 RUN npm run package
