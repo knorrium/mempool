@@ -20,6 +20,7 @@ COPY --from=rustgbt . ../rust
 RUN pwd
 RUN ls -laSFR
 RUN ls .. -lasF
+ENV FD=/build
 RUN npm install --omit=dev --omit=optional
 RUN npm run package
 
