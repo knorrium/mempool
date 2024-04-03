@@ -12,7 +12,8 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH="/root/.cargo/bin:$PATH"
 
 WORKDIR /
-COPY . .
+COPY backend/* ./backend
+COPY rust/* ./rust
 
 RUN cd backend && npm install --omit=dev --omit=optional
 RUN cd backend && npm run build
