@@ -27,7 +27,7 @@ ENV NODE_VERSION="v22.0.0"
 ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
 
 # Install Node.js version 22 using NVM
-RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION"
+RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION && nvm global $NODE_VERSION"
 
 # Verify Node.js installation
 RUN node -v
