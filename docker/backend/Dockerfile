@@ -27,10 +27,10 @@ RUN echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # 
 RUN source .zshrc && nvm install 22 && nvm alias default 22
 
 # Install Node.js dependencies without dev and optional dependencies
-RUN source .zshrc && npm install --omit=dev --omit=optional
+RUN source .zshrc && nvm use 22 && npm install --omit=dev --omit=optional
 
 WORKDIR /build
-RUN source .zshrc && npm run package
+RUN source .zshrc && nvm use 22 && npm run package
 
 # Stage 2: Final image
 FROM node:22-alpine
