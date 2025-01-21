@@ -18,16 +18,19 @@ RUN apk update && apk add --no-cache \
     && update-ca-certificates
 
 RUN touch ~/.bash_profile
-# Install NVM and Node.js 22
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
-    && export NVM_DIR="~/.nvm" \
-    && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
-    && nvm install 22 \
-    && nvm use 22 \
-    && nvm alias default 22
+# Install NVM (Node Version Manager)
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-# Set the correct PATH for Node.js
-ENV PATH="~/.nvm/versions/node/v22.*/bin:$PATH"
+# Set environment variables for NVM and Node
+ENV NVM_DIR="/root/.nvm"
+ENV NODE_VERSION="v22.0.0"
+ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
+
+# Install Node.js version 22 using NVM
+RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION"
+
+# Verify Node.js installation
+RUN node -v
 
 # Install Node.js dependencies without dev and optional dependencies
 RUN npm install --omit=dev --omit=optional
