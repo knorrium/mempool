@@ -1,4 +1,5 @@
-# Stage 1: Builder
+FROM node:22-alpine AS node
+
 FROM rust:1.83.0-alpine AS builder
 
 ARG commitHash
@@ -17,23 +18,17 @@ RUN apk update && apk add --no-cache \
     curl \
     && update-ca-certificates
 
-# Install Node.js
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-RUN echo "# Load nvm path" >> .bashrc
-RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .bashrc
-RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> .bashrc
-RUN echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion"' >> .zshrc
-RUN source .bashrc && nvm install 22 && nvm alias default 22
+COPY --from=node /usr/lib /usr/lib
+COPY --from=node /usr/local/share /usr/local/share
+COPY --from=node /usr/local/lib /usr/local/lib
+COPY --from=node /usr/local/include /usr/local/include
+COPY --from=node /usr/local/bin /usr/local/bin
+    
 
-# Install Node.js dependencies without dev and optional dependencies
-RUN source .bashrc && nvm use 22 && npm install --omit=dev --omit=optional
+RUN npm install --omit=dev --omit=optional
 
 WORKDIR /build
-RUN source .bashrc && nvm use 22 && npm run package
-
-# Stage 2: Final image
-FROM node:22-alpine
+RUN npm run package
 
 WORKDIR /backend
 
