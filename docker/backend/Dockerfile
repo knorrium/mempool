@@ -17,26 +17,19 @@ RUN apk update && apk add --no-cache \
     curl \
     && update-ca-certificates
 
-RUN touch ~/.bash_profile
-# Install NVM (Node Version Manager)
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-
-# Set environment variables for NVM and Node
-ENV NVM_DIR="/root/.nvm"
-ENV NODE_VERSION="v22.0.0"
-ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
-
-# Install Node.js version 22 using NVM
-RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && nvm use $NODE_VERSION"
-
-# Verify Node.js installation
-RUN bash -c "node -v"
+# Install Node.js
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+RUN echo "# Load nvm path" >> .zshrc
+RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .zshrc
+RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> .zshrc
+RUN echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion"' >> .zshrc
+RUN source .zshrc && nvm install $NODE_VERSION
 
 # Install Node.js dependencies without dev and optional dependencies
-RUN bash -c "npm install --omit=dev --omit=optional"
+RUN npm install --omit=dev --omit=optional
 
 WORKDIR /build
-RUN bash -c "npm run package"
+RUN npm run package
 
 # Stage 2: Final image
 FROM node:22-alpine
