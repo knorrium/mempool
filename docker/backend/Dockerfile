@@ -23,7 +23,7 @@ RUN echo "# Load nvm path" >> .zshrc
 RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .zshrc
 RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> .zshrc
 RUN echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion"' >> .zshrc
-RUN source .zshrc && nvm install $NODE_VERSION
+RUN source .zshrc && nvm install v22 && nvm alias default v22
 
 # Install Node.js dependencies without dev and optional dependencies
 RUN npm install --omit=dev --omit=optional
