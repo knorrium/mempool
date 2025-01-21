@@ -20,17 +20,17 @@ RUN apk update && apk add --no-cache \
 # Install Node.js
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-RUN echo "# Load nvm path" >> .zshrc
-RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .zshrc
-RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> .zshrc
+RUN echo "# Load nvm path" >> .bashrc
+RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .bashrc
+RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> .bashrc
 RUN echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion"' >> .zshrc
-RUN source .zshrc && nvm install 22 && nvm alias default 22
+RUN source .bashrc && nvm install 22 && nvm alias default 22
 
 # Install Node.js dependencies without dev and optional dependencies
-RUN source .zshrc && nvm use 22 && npm install --omit=dev --omit=optional
+RUN source .bashrc && nvm use 22 && npm install --omit=dev --omit=optional
 
 WORKDIR /build
-RUN source .zshrc && nvm use 22 && npm run package
+RUN source .bashrc && nvm use 22 && npm run package
 
 # Stage 2: Final image
 FROM node:22-alpine
