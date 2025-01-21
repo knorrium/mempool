@@ -7,7 +7,7 @@ ENV MEMPOOL_COMMIT_HASH=${commitHash}
 WORKDIR /build
 COPY . .
 
-# Install dependencies for building
+# Install dependencies for building, including curl and Rust installation
 RUN apk update && apk add --no-cache \
     build-base \
     python3 \
@@ -18,14 +18,14 @@ RUN apk update && apk add --no-cache \
     rust \
     && update-ca-certificates
 
-# Install Rust via rustup (same as before)
-RUN CPU_ARCH=$(uname -m); \
-    if [ "$CPU_ARCH" = "armv7l" ] || [ "$CPU_ARCH" = "aarch64" ]; then \
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y --default-toolchain stable; \
-    fi
+# Ensure that the Rust toolchain is installed correctly
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
 
-# Ensure Rust is in the PATH
+# Add cargo to PATH
 ENV PATH="/root/.cargo/bin:$PATH"
+
+# Verify installation of cargo (to ensure it's available in PATH)
+RUN cargo --version
 
 # Copy other necessary artifacts
 COPY --from=backend . .
