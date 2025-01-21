@@ -24,10 +24,11 @@ COPY --from=node /usr/local/lib /usr/local/lib
 COPY --from=node /usr/local/include /usr/local/include
 COPY --from=node /usr/local/bin /usr/local/bin
 
-WORKDIR /build
+COPY --from=backend . .
+COPY --from=rustgbt . ../rust/
+ENV FD=/build/rust-gbt
 RUN npm install --omit=dev --omit=optional
 
-WORKDIR /build
 RUN npm run package
 
 FROM node:22-alpine AS runtime
