@@ -18,6 +18,7 @@ RUN apk update && apk add --no-cache \
     && update-ca-certificates
 
 # Install Node.js
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 RUN echo "# Load nvm path" >> .zshrc
 RUN echo 'export NVM_DIR="$HOME/.nvm"' >> .zshrc
