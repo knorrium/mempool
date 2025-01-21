@@ -19,8 +19,12 @@ RUN apk update && apk add --no-cache \
     && update-ca-certificates
 
 # Install Rust via rustup (same as before)
-RUN CPU_ARCH=$(uname -m); if [ "$CPU_ARCH" = "armv7l" ]; then c_rehash; fi
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y --default-toolchain stable
+RUN CPU_ARCH=$(uname -m); \
+    if [ "$CPU_ARCH" = "armv7l" ] || [ "$CPU_ARCH" = "aarch64" ]; then \
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sed 's#/proc/self/exe#\/bin\/sh#g' | sh -s -- -y --default-toolchain stable; \
+    fi
+
+# Ensure Rust is in the PATH
 ENV PATH="/root/.cargo/bin:$PATH"
 
 # Copy other necessary artifacts

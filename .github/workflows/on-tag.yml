@@ -2,7 +2,7 @@ name: Docker build on tag
 env:
   DOCKER_CLI_EXPERIMENTAL: enabled
   TAG_FMT: "^refs/tags/(((.?[0-9]+){3,4}))$"
-  DOCKER_BUILDKIT: 0
+  DOCKER_BUILDKIT: 1  # Enable BuildKit for multi-platform support
   COMPOSE_DOCKER_CLI_BUILD: 0
 
 on:
@@ -25,7 +25,6 @@ jobs:
     timeout-minutes: 120
     name: Build and push to DockerHub
     steps:
-      # Workaround based on JonasAlfredsson/docker-on-tmpfs@v1.0.1
       - name: Replace the current swap file
         shell: bash
         run: |
