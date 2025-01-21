@@ -30,6 +30,8 @@ RUN npm install --omit=dev --omit=optional
 WORKDIR /build
 RUN npm run package
 
+FROM node:22-alpine AS runtime
+
 WORKDIR /backend
 
 RUN chown 1000:1000 ./
