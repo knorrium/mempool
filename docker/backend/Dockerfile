@@ -30,13 +30,13 @@ ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
 RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && nvm use $NODE_VERSION"
 
 # Verify Node.js installation
-RUN node -v
+RUN bash -c "node -v"
 
 # Install Node.js dependencies without dev and optional dependencies
-RUN npm install --omit=dev --omit=optional
+RUN bash -c "npm install --omit=dev --omit=optional"
 
 WORKDIR /build
-RUN npm run package
+RUN bash -c "npm run package"
 
 # Stage 2: Final image
 FROM node:22-alpine
