@@ -1,0 +1,27 @@
+name: "Check Docker configuration replacements"
+
+on:
+  pull_request:
+    types: [opened, review_requested, synchronize]
+
+jobs:
+  backend:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Check backend docker config file"
+        uses: actions/checkout@v3
+
+      - name: "Execute start script"
+        run: |
+          cd docker/backend
+          head -n -2 start.sh | sh
+
+      - name: "Print replacement results"
+        run: |
+          cd docker/backend
+          cat mempool-config.json
+
+      - name: "Check output"
+        run: |
+          cd docker/backend
+          cat mempool-config.json | grep -q __ | test $? -eq 1
