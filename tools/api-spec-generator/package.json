@@ -1,0 +1,48 @@
+{
+  "name": "@mempool/api-spec-generator",
+  "version": "1.0.0",
+  "description": "Generate OpenAPI and AsyncAPI specifications from Mempool backend code",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "api-spec-generator": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "generate": "tsx src/cli.ts generate --all",
+    "generate:openapi": "tsx src/cli.ts generate --openapi",
+    "generate:asyncapi": "tsx src/cli.ts generate --asyncapi",
+    "generate:frontend": "tsx src/cli.ts generate --frontend",
+    "copy:frontend": "tsx src/scripts/copy-to-frontend.ts",
+    "deploy:frontend": "npm run generate:frontend && npm run copy:frontend",
+    "validate": "tsx src/cli.ts validate",
+    "coverage": "tsx src/cli.ts coverage",
+    "serve": "tsx src/cli.ts serve",
+    "serve:watch": "tsx src/cli.ts serve --watch",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "@asyncapi/parser": "^3.0.0",
+    "chokidar": "^3.6.0",
+    "commander": "^12.0.0",
+    "express": "^4.22.1",
+    "swagger-ui-dist": "^5.32.1",
+    "ts-morph": "^22.0.0",
+    "yaml": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.25",
+    "@types/node": "^20.11.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0",
+    "ws": "^8.19.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

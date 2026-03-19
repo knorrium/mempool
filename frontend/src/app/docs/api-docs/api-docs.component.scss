@@ -210,7 +210,15 @@ h3 {
   text-decoration: none;
 }
 
-.endpoint-container .section-header span {
+.endpoint-container .section-header .endpoint-tags {
+  float: right;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.endpoint-container .section-header .endpoint-tag,
+.endpoint-container .section-header .category-tag {
   color: var(--fg);
   background-color: var(--tertiary);
   font-size: 12px;
@@ -220,8 +228,27 @@ h3 {
   letter-spacing: 1px;
   border-radius: 0.25rem;
   font-family: monospace;
-  float: right;
   white-space: nowrap;
+}
+
+.endpoint-container .section-header .endpoint-tag.tag-internal {
+  background-color: #8b4513;
+  color: #fff;
+}
+
+.endpoint-container .section-header .endpoint-tag.tag-deprecated {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.endpoint-container .section-header .endpoint-tag.tag-beta {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.endpoint-container .section-header .endpoint-tag.tag-experimental {
+  background-color: #fd7e14;
+  color: #fff;
 }
 
 .endpoint-container .section-header table {
@@ -385,7 +412,7 @@ h3 {
     z-index: 1;
   }
 
-  .endpoint-container .section-header span {
+  .endpoint-container .section-header .endpoint-tags {
     display: none;
   }
 

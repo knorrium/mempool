@@ -1,0 +1,164 @@
+# Mempool OpenAPI Base Template
+# This template defines the base structure for the generated OpenAPI spec
+
+openapi: "3.1.0"
+
+info:
+  title: Mempool API
+  description: |
+    API for the Mempool open-source block explorer.
+
+    Provides access to Bitcoin blockchain data, mempool information,
+    transaction tracking, fee estimation, and network statistics.
+
+    ## Features
+    - Real-time mempool data
+    - Block and transaction information
+    - Fee estimation
+    - Address tracking
+    - Mining pool statistics
+    - Lightning Network data (on supported networks)
+    - Liquid Network support
+
+    ## Networks
+    - Mainnet: https://mempool.space/api
+    - Testnet3: https://mempool.space/testnet/api
+    - Testnet4: https://mempool.space/testnet4/api
+    - Signet: https://mempool.space/signet/api
+    - Liquid: https://liquid.network/api
+    - Liquid Testnet: https://liquid.network/liquidtestnet/api
+
+    ## Rate Limits
+    The public API has rate limits in place. For high-volume usage,
+    consider running your own Mempool instance.
+  version: "1.0.0"
+  contact:
+    name: Mempool
+    url: https://mempool.space
+  license:
+    name: GNU Affero General Public License v3.0
+    url: https://github.com/mempool/mempool/blob/master/LICENSE
+
+servers:
+  - url: https://mempool.space/api
+    description: Mainnet
+  - url: https://mempool.space/testnet/api
+    description: Testnet3
+  - url: https://mempool.space/testnet4/api
+    description: Testnet4
+  - url: https://mempool.space/signet/api
+    description: Signet
+  - url: https://liquid.network/api
+    description: Liquid
+  - url: https://liquid.network/liquidtestnet/api
+    description: Liquid Testnet
+
+tags:
+  - name: General
+    description: General API endpoints for backend info and initialization
+  - name: Transactions
+    description: Transaction-related endpoints including CPFP and RBF
+  - name: Addresses
+    description: Address and script hash endpoints
+  - name: Blocks
+    description: Block-related endpoints
+  - name: Mempool
+    description: Mempool information and statistics
+  - name: Fees
+    description: Fee estimation endpoints
+  - name: Mining
+    description: Mining statistics and pool information
+  - name: Lightning
+    description: Lightning Network endpoints (nodes, channels, statistics)
+  - name: Liquid
+    description: Liquid Network specific endpoints
+  - name: Prices
+    description: Price and currency conversion endpoints
+  - name: Statistics
+    description: Historical statistics and charts
+  - name: Accelerations
+    description: Transaction acceleration endpoints
+
+externalDocs:
+  description: Mempool Documentation
+  url: https://mempool.space/docs/api/rest
+
+# Paths and components are generated dynamically
+paths: {}
+
+components:
+  schemas: {}
+
+  parameters:
+    txId:
+      name: txId
+      in: path
+      required: true
+      description: Transaction ID (64 hex characters)
+      schema:
+        type: string
+        pattern: "^[a-fA-F0-9]{64}$"
+
+    blockHash:
+      name: hash
+      in: path
+      required: true
+      description: Block hash (64 hex characters)
+      schema:
+        type: string
+        pattern: "^[a-fA-F0-9]{64}$"
+
+    blockHeight:
+      name: height
+      in: path
+      required: true
+      description: Block height
+      schema:
+        type: integer
+        minimum: 0
+
+    address:
+      name: address
+      in: path
+      required: true
+      description: Bitcoin address
+      schema:
+        type: string
+
+    scripthash:
+      name: scripthash
+      in: path
+      required: true
+      description: Script hash (hex encoded)
+      schema:
+        type: string
+        pattern: "^[a-fA-F0-9]+$"
+
+  responses:
+    BadRequest:
+      description: Bad request - invalid parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    ServiceUnavailable:
+      description: Service unavailable - server is syncing
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: "Service Unavailable"

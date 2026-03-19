@@ -1,0 +1,127 @@
+# Mempool AsyncAPI Base Template
+# This template defines the base structure for the generated AsyncAPI spec
+
+asyncapi: "2.6.0"
+
+info:
+  title: Mempool WebSocket API
+  description: |
+    Real-time WebSocket API for the Mempool open-source block explorer.
+
+    ## Features
+    - Live block notifications
+    - Mempool statistics updates
+    - Transaction tracking
+    - Address monitoring
+    - RBF (Replace-By-Fee) tracking
+    - Difficulty adjustment data
+    - Price conversions
+
+    ## Connection
+    Connect to the WebSocket endpoint for your desired network:
+    - Mainnet: wss://mempool.space/api/v1/ws
+    - Testnet3: wss://mempool.space/testnet/api/v1/ws
+    - Testnet4: wss://mempool.space/testnet4/api/v1/ws
+    - Signet: wss://mempool.space/signet/api/v1/ws
+    - Liquid: wss://liquid.network/api/v1/ws
+    - Liquid Testnet: wss://liquid.network/liquidtestnet/api/v1/ws
+
+    ## Protocol
+    All messages are JSON encoded. Send subscription messages to receive updates.
+
+    ## Subscriptions
+    1. **Want subscriptions**: Subscribe to data channels
+       ```json
+       { "action": "want", "data": ["blocks", "mempool-blocks", "stats"] }
+       ```
+
+    2. **Track subscriptions**: Track specific transactions/addresses
+       ```json
+       { "track-tx": "<txid>" }
+       { "track-address": "<address>" }
+       ```
+
+    ## Keepalive
+    Send ping messages to keep the connection alive:
+    ```json
+    { "action": "ping" }
+    ```
+  version: "1.0.0"
+  contact:
+    name: Mempool
+    url: https://mempool.space
+  license:
+    name: GNU Affero General Public License v3.0
+    url: https://github.com/mempool/mempool/blob/master/LICENSE
+
+servers:
+  mainnet:
+    url: mempool.space
+    protocol: wss
+    description: Bitcoin Mainnet WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /api/v1/ws
+
+  testnet:
+    url: mempool.space
+    protocol: wss
+    description: Bitcoin Testnet3 WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /testnet/api/v1/ws
+
+  testnet4:
+    url: mempool.space
+    protocol: wss
+    description: Bitcoin Testnet4 WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /testnet4/api/v1/ws
+
+  signet:
+    url: mempool.space
+    protocol: wss
+    description: Bitcoin Signet WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /signet/api/v1/ws
+
+  liquid:
+    url: liquid.network
+    protocol: wss
+    description: Liquid Network WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /api/v1/ws
+
+  liquidtestnet:
+    url: liquid.network
+    protocol: wss
+    description: Liquid Testnet WebSocket endpoint
+    bindings:
+      ws:
+        pathname: /liquidtestnet/api/v1/ws
+
+defaultContentType: application/json
+
+# Channels and components are generated dynamically
+channels: {}
+
+components:
+  schemas: {}
+  messages: {}
+
+externalDocs:
+  description: Mempool Documentation
+  url: https://mempool.space/docs/api/websocket
+
+tags:
+  - name: Connection
+    description: Connection management (init, ping)
+  - name: Subscriptions
+    description: Subscribe to data channels
+  - name: Tracking
+    description: Track specific transactions, addresses, or assets
+  - name: Updates
+    description: Real-time update messages from server

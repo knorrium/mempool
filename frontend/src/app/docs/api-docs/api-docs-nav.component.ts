@@ -2,8 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Env, StateService } from '@app/services/state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { restApiDocsData, wsApiDocsData, electrumApiDocsData } from '@app/docs/api-docs/api-docs-data';
-import { faqData } from '@app/docs/api-docs/api-docs-data';
+import { restApiDocsData, wsApiDocsData, electrumApiDocsData, faqData } from '@app/docs/api-docs/api-docs-data.generated';
 
 @Component({
   selector: 'app-api-docs-nav',
