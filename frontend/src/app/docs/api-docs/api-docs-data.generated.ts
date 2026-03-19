@@ -10022,9 +10022,9 @@ export const restApiDocsData = [
   },
   {
     "type": "category",
-    "category": "accelerator",
-    "fragment": "accelerator",
-    "title": "Accelerator",
+    "category": "accelerator-public",
+    "fragment": "accelerator-public",
+    "title": "Accelerator (Public)",
     "showConditions": [
       "",
       "testnet",
@@ -10034,7 +10034,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "request-acceleration",
     "title": "POST Request Acceleration",
     "description": {
@@ -10091,7 +10091,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "active-accelerations",
     "title": "GET Get Active Accelerations",
     "description": {
@@ -10148,7 +10148,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "acceleration-totals",
     "title": "GET Get Acceleration Totals",
     "description": {
@@ -10205,7 +10205,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "recent-accelerations",
     "title": "GET Get Recent Accelerations",
     "description": {
@@ -10262,7 +10262,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerations-by-height",
     "title": "GET Get Accelerations By Height",
     "description": {
@@ -10319,7 +10319,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerations-by-pool",
     "title": "GET Get Accelerations By Pool",
     "description": {
@@ -10376,7 +10376,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-estimate",
     "title": "POST Get Accelerator Estimate",
     "description": {
@@ -10430,7 +10430,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-accelerations-stats",
     "title": "GET Get Accelerator Accelerations Stats",
     "description": {
@@ -10484,7 +10484,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-accelerations-history-aggregated",
     "title": "GET Get Accelerator Accelerations History Aggregated",
     "description": {
@@ -10538,7 +10538,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-accelerations-history",
     "title": "GET Get Accelerator Accelerations History",
     "description": {
@@ -10592,7 +10592,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-acceleration",
     "title": "GET Get Accelerator Acceleration",
     "description": {
@@ -10646,7 +10646,7 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "accelerator",
+    "category": "accelerator-public",
     "fragment": "accelerator-accelerations",
     "title": "GET Get Accelerator Accelerations",
     "description": {
@@ -10668,6 +10668,415 @@ export const restApiDocsData = [
       "default": {
         "codeTemplate": {
           "curl": "/api/v1/services/accelerator/accelerations",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "accelerator-private",
+    "fragment": "accelerator-private",
+    "title": "Accelerator (Authenticated)",
+    "showConditions": [
+      ""
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-top-up-history",
+    "title": "GET Top Up History",
+    "description": {
+      "default": "<p>Returns the top up history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/top-up-history",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/top-up-history",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-balance",
+    "title": "GET Available Balance",
+    "description": {
+      "default": "<p>Returns the available balance for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/balance",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/balance",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-accelerate",
+    "title": "POST Accelerate A Transaction (Pro)",
+    "description": {
+      "default": "<p>Accelerate a transaction using the authenticated account balance.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/services/accelerator/accelerate",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerate",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-history",
+    "title": "GET Acceleration History",
+    "description": {
+      "default": "<p>Returns the acceleration history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p><p>Query parameters:</p><ul><li><code>status</code>: <code>all</code>, <code>requested</code>, <code>accelerating</code>, <code>mined</code>, <code>completed</code>, <code>failed</code></li><li><code>details</code>: <code>true</code> or <code>false</code></li></ul>"
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/history",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/history?status=all&details=true",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-cancel",
+    "title": "POST Cancel Acceleration (Pro)",
+    "description": {
+      "default": "<p>Cancel a pending acceleration.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/services/accelerator/cancel",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/cancel",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-auto-accelerate",
+    "title": "POST Auto-Accelerate A Transaction (Pro)",
+    "description": {
+      "default": "<p>Set up automatic acceleration for a transaction.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/services/accelerator/auto-accelerate",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/auto-accelerate",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-auto-accelerate-history",
+    "title": "GET Auto-Acceleration History",
+    "description": {
+      "default": "<p>Returns the auto-acceleration history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/auto-accelerate/history",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/auto-accelerate/history",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator-private",
+    "fragment": "accelerator-auto-accelerate-cancel",
+    "title": "POST Cancel Auto-Acceleration (Pro)",
+    "description": {
+      "default": "<p>Cancel a pending auto-acceleration.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>"
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/services/accelerator/auto-accelerate/cancel",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/auto-accelerate/cancel",
           "commonJS": "",
           "esModule": ""
         },

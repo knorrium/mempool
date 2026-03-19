@@ -56,7 +56,8 @@ const CATEGORY_ORDER = [
   'mempool',
   'transactions',
   'lightning',
-  'accelerator',
+  'accelerator-public',
+  'accelerator-private',
   'statistics',
 ];
 
@@ -74,13 +75,245 @@ const PATH_TO_CATEGORY: Record<string, string> = {
   '/api/v1/asset': 'assets',
   '/api/v1/liquid': 'assets',
   '/api/v1/prices': 'general',
-  '/api/v1/acceleration': 'accelerator',
+  '/api/v1/acceleration': 'accelerator-public',
   '/api/v1/cpfp': 'transactions',
   '/api/v1/rbf': 'transactions',
   '/api/v1/validate': 'addresses',
   '/api/v1/backend': 'general',
   '/api/v1/init': 'general',
 };
+
+// URL-specific category mappings (takes precedence over PATH_TO_CATEGORY)
+const URL_TO_CATEGORY: Record<string, string> = {
+  // Accelerator (Public) - no authentication required
+  '/v1/services/accelerator/estimate': 'accelerator-public',
+  '/v1/services/payments/bitcoin': 'accelerator-public',
+  '/v1/services/accelerator/accelerations': 'accelerator-public',
+  '/v1/services/accelerator/accelerations/history': 'accelerator-public',
+
+  // Accelerator (Authenticated) - requires X-Mempool-Auth header
+  '/v1/services/accelerator/top-up-history': 'accelerator-private',
+  '/v1/services/accelerator/balance': 'accelerator-private',
+  '/v1/services/accelerator/accelerate': 'accelerator-private',
+  '/v1/services/accelerator/history': 'accelerator-private',
+  '/v1/services/accelerator/cancel': 'accelerator-private',
+  '/v1/services/accelerator/auto-accelerate': 'accelerator-private',
+  '/v1/services/accelerator/auto-accelerate/history': 'accelerator-private',
+  '/v1/services/accelerator/auto-accelerate/cancel': 'accelerator-private',
+};
+
+// Manual endpoints not in the open-source backend (e.g., mempool.space services)
+const MANUAL_ENDPOINTS: FrontendEndpoint[] = [
+  // Accelerator (Authenticated) endpoints
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-top-up-history',
+    title: 'GET Top Up History',
+    description: {
+      default: '<p>Returns the top up history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'GET',
+    urlString: '/v1/services/accelerator/top-up-history',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/top-up-history',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-balance',
+    title: 'GET Available Balance',
+    description: {
+      default: '<p>Returns the available balance for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'GET',
+    urlString: '/v1/services/accelerator/balance',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/balance',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-accelerate',
+    title: 'POST Accelerate A Transaction (Pro)',
+    description: {
+      default: '<p>Accelerate a transaction using the authenticated account balance.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'POST',
+    urlString: '/v1/services/accelerator/accelerate',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/accelerate',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-history',
+    title: 'GET Acceleration History',
+    description: {
+      default: '<p>Returns the acceleration history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p><p>Query parameters:</p><ul><li><code>status</code>: <code>all</code>, <code>requested</code>, <code>accelerating</code>, <code>mined</code>, <code>completed</code>, <code>failed</code></li><li><code>details</code>: <code>true</code> or <code>false</code></li></ul>',
+    },
+    httpRequestMethod: 'GET',
+    urlString: '/v1/services/accelerator/history',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/history?status=all&details=true',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-cancel',
+    title: 'POST Cancel Acceleration (Pro)',
+    description: {
+      default: '<p>Cancel a pending acceleration.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'POST',
+    urlString: '/v1/services/accelerator/cancel',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/cancel',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-auto-accelerate',
+    title: 'POST Auto-Accelerate A Transaction (Pro)',
+    description: {
+      default: '<p>Set up automatic acceleration for a transaction.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'POST',
+    urlString: '/v1/services/accelerator/auto-accelerate',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/auto-accelerate',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-auto-accelerate-history',
+    title: 'GET Auto-Acceleration History',
+    description: {
+      default: '<p>Returns the auto-acceleration history for the authenticated account.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'GET',
+    urlString: '/v1/services/accelerator/auto-accelerate/history',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/auto-accelerate/history',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+  {
+    type: 'endpoint',
+    category: 'accelerator-private',
+    fragment: 'accelerator-auto-accelerate-cancel',
+    title: 'POST Cancel Auto-Acceleration (Pro)',
+    description: {
+      default: '<p>Cancel a pending auto-acceleration.</p><p>Requires <code>X-Mempool-Auth</code> header with a valid authentication token.</p>',
+    },
+    httpRequestMethod: 'POST',
+    urlString: '/v1/services/accelerator/auto-accelerate/cancel',
+    showConditions: [''],
+    showJsExamples: { '': false },
+    codeExample: {
+      default: {
+        codeTemplate: {
+          curl: '/api/v1/services/accelerator/auto-accelerate/cancel',
+          commonJS: '',
+          esModule: '',
+        },
+        codeSampleMainnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleTestnet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleSignet: { esModule: [], commonJS: [], curl: [], response: '' },
+        codeSampleLiquid: { esModule: [], commonJS: [], curl: [], response: '' },
+      },
+    },
+  },
+];
 
 // Sample values for curl placeholders
 const SAMPLE_VALUES: Record<string, Record<string, string[]>> = {
@@ -435,25 +668,37 @@ export class FrontendGenerator {
     // Iterate in defined category order
     for (const category of CATEGORY_ORDER) {
       const routes = categorizedRoutes[category];
-      if (!routes || routes.length === 0) continue;
+      const manualEndpoints = MANUAL_ENDPOINTS.filter(e => e.category === category);
+
+      // Skip category if no routes and no manual endpoints
+      if ((!routes || routes.length === 0) && manualEndpoints.length === 0) continue;
 
       // Add category header
+      const categoryNetworks = routes && routes.length > 0
+        ? this.getCategoryNetworks(routes)
+        : [''];  // Default to mainnet only for manual endpoints
+
       restApiDocsData.push({
         type: 'category',
         category,
         fragment: category,
         title: this.categoryToTitle(category),
-        showConditions: this.getCategoryNetworks(routes),
+        showConditions: categoryNetworks,
       });
 
       // Convert routes to endpoints
       const endpoints: FrontendEndpoint[] = [];
-      for (const route of routes) {
-        const endpoint = this.routeToEndpoint(route, category);
-        if (endpoint) {
-          endpoints.push(endpoint);
+      if (routes) {
+        for (const route of routes) {
+          const endpoint = this.routeToEndpoint(route, category);
+          if (endpoint) {
+            endpoints.push(endpoint);
+          }
         }
       }
+
+      // Add manual endpoints for this category
+      endpoints.push(...manualEndpoints);
 
       // Sort endpoints: non-internal first, then internal at the bottom
       endpoints.sort((a, b) => {
@@ -645,6 +890,12 @@ export class FrontendGenerator {
   private determineCategory(route: ParsedRoute): string {
     const pathLower = route.path.toLowerCase();
 
+    // First check URL_TO_CATEGORY for exact URL match (strip /api prefix)
+    const urlWithoutApi = route.path.replace(/^\/api/, '');
+    if (URL_TO_CATEGORY[urlWithoutApi]) {
+      return URL_TO_CATEGORY[urlWithoutApi];
+    }
+
     // Check path prefixes
     for (const [prefix, category] of Object.entries(PATH_TO_CATEGORY)) {
       if (pathLower.startsWith(prefix.toLowerCase())) {
@@ -657,7 +908,7 @@ export class FrontendGenerator {
     if (sourceFile.includes('liquid')) return 'assets';
     if (sourceFile.includes('lightning') || sourceFile.includes('nodes') || sourceFile.includes('channels')) return 'lightning';
     if (sourceFile.includes('mining')) return 'mining';
-    if (sourceFile.includes('acceleration')) return 'accelerator';
+    if (sourceFile.includes('acceleration')) return 'accelerator-public';
     if (sourceFile.includes('statistics')) return 'statistics';
 
     return 'general';
@@ -952,7 +1203,8 @@ export class FrontendGenerator {
       lightning: 'Lightning',
       assets: 'Assets',
       statistics: 'Statistics',
-      accelerator: 'Accelerator',
+      'accelerator-public': 'Accelerator (Public)',
+      'accelerator-private': 'Accelerator (Authenticated)',
     };
 
     return titles[category] || category.charAt(0).toUpperCase() + category.slice(1);
