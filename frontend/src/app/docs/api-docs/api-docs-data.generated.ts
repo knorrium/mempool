@@ -2932,1863 +2932,6 @@ export const restApiDocsData = [
   },
   {
     "type": "category",
-    "category": "transactions",
-    "fragment": "transactions",
-    "title": "Transactions",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "submit-package",
-    "title": "POST Submit Package",
-    "description": {
-      "default": "Submit package."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/txs/package",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/txs/package",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "cpfp-local-txs",
-    "title": "Get CPFP Local Transactions",
-    "description": {
-      "default": "Cpfp local txs."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/cpfp",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/cpfp",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction-form",
-    "title": "POST Post Transaction Form",
-    "description": {
-      "default": "Transaction form."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/tx/push",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/push",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "cached-tx",
-    "title": "Get Cached Transaction",
-    "description": {
-      "default": "Returns cached tx."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/cached",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/cached",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "rbf-history",
-    "title": "Get RBF History",
-    "description": {
-      "default": "Returns rbf history."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/rbf",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/rbf",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "cpfp-info",
-    "title": "GET Get Cpfp Info",
-    "description": {
-      "default": "Returns cpfp info."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/cpfp/:txId",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/cpfp/:txId",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "batched-outspends",
-    "title": "GET Get Batched Outspends",
-    "description": {
-      "default": "Returns batched outspends."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/txs/outspends",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/txs/outspends",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction-merkle-proof",
-    "title": "Get Transaction Merkle Proof",
-    "description": {
-      "default": "Returns transaction merkle proof."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/merkle-proof",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/merkle-proof",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction-outspends",
-    "title": "Get Transaction Outspends",
-    "description": {
-      "default": "Returns transaction outspends."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/outspends",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/outspends",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction-status",
-    "title": "Get Transaction Status",
-    "description": {
-      "default": "Returns transaction status."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/status",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/status",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "raw-transaction",
-    "title": "Get Raw Transaction Hex",
-    "description": {
-      "default": "Returns raw transaction."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId/hex",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId/hex",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "test-transactions",
-    "title": "POST Test Transactions",
-    "description": {
-      "default": "Test transactions."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/txs/test",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/txs/test",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction",
-    "title": "POST Post Transaction",
-    "description": {
-      "default": "Transaction."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/tx",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "transactions",
-    "fragment": "transaction",
-    "title": "Get Transaction",
-    "description": {
-      "default": "Returns transaction."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/tx/:txId",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/tx/:txId",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
-    "category": "blocks",
-    "fragment": "blocks",
-    "title": "Blocks",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "blocks-by-bulk",
-    "title": "Get Blocks Bulk (Range)",
-    "description": {
-      "default": "Returns blocks in bulk for the specified height range."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks-bulk/:from/:to",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks-bulk/:from/:to",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "blocks-by-bulk",
-    "title": "Get Blocks Bulk (From Height)",
-    "description": {
-      "default": "Returns blocks in bulk starting from the specified height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks-bulk/:from",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks-bulk/:from",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-tip-height",
-    "title": "Get Block Tip Height",
-    "description": {
-      "default": "Returns block tip height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks/tip/height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks/tip/height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-tx-audit-summary",
-    "title": "GET Get Block Tx Audit Summary",
-    "description": {
-      "default": "Returns block tx audit summary."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/tx/:txid/audit",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/tx/:txid/audit",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-audit-summary",
-    "title": "Get Block Audit Summary",
-    "description": {
-      "default": "Returns block audit summary."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/audit-summary",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/audit-summary",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "stripped-block-transaction",
-    "title": "GET Get Stripped Block Transaction",
-    "description": {
-      "default": "Returns stripped block transaction."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/tx/:txid/summary",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/tx/:txid/summary",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "stripped-block-transactions",
-    "title": "Get Block Summary",
-    "description": {
-      "default": "Returns stripped block transactions."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/summary",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/summary",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block",
-    "title": "Get Block",
-    "description": {
-      "default": "Returns block."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "blocks",
-    "title": "Get Blocks (From Height)",
-    "description": {
-      "default": "Returns 15 blocks starting from the specified height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks/:height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks/:height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "blocks",
-    "title": "Get Blocks",
-    "description": {
-      "default": "Returns the 15 most recent blocks."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-height",
-    "title": "Get Block at Height",
-    "description": {
-      "default": "Returns block height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block-height/:height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block-height/:height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-transactions",
-    "title": "Get Block Transactions (Paginated)",
-    "description": {
-      "default": "Returns 25 transactions in a block starting from the specified index."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/txs/:index",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/txs/:index",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-transactions",
-    "title": "Get Block Transactions",
-    "description": {
-      "default": "Returns the first 25 transactions in a block."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/txs",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/txs",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "tx-ids-for-block",
-    "title": "Get Block Transaction IDs",
-    "description": {
-      "default": "Returns tx ids for block."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/txids",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/txids",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "raw-block",
-    "title": "Get Raw Block",
-    "description": {
-      "default": "Returns raw block."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/raw",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/raw",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-tip-hash",
-    "title": "Get Block Tip Hash",
-    "description": {
-      "default": "Returns block tip hash."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/blocks/tip/hash",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/blocks/tip/hash",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "blocks",
-    "fragment": "block-header",
-    "title": "Get Block Header",
-    "description": {
-      "default": "Returns block header."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/block/:hash/header",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/block/:hash/header",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
     "category": "addresses",
     "fragment": "addresses",
     "title": "Addresses",
@@ -5183,32 +3326,56 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/address/:address/utxo",
+          "curl": "/api/v1/address/%{1}/utxo",
           "commonJS": "",
           "esModule": ""
         },
         "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "commonJS": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "curl": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
           "response": ""
         },
         "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "commonJS": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "curl": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
           "response": ""
         }
       }
@@ -5301,32 +3468,56 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/address/:address/txs",
+          "curl": "/api/v1/address/%{1}/txs",
           "commonJS": "",
           "esModule": ""
         },
         "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "commonJS": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "curl": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
           "response": ""
         },
         "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "commonJS": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "curl": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
           "response": ""
         }
       }
@@ -5360,2415 +3551,56 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/address/:address",
+          "curl": "/api/v1/address/%{1}",
           "commonJS": "",
           "esModule": ""
         },
         "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "commonJS": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
+          "curl": [
+            "1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv"
+          ],
           "response": ""
         },
         "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "commonJS": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
+          "curl": [
+            "tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee"
+          ],
           "response": ""
         },
         "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
-    "category": "fees",
-    "fragment": "fees",
-    "title": "Fees",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "fees",
-    "fragment": "mempool-blocks",
-    "title": "Get Mempool Blocks",
-    "description": {
-      "default": "Returns mempool blocks."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/fees/mempool-blocks",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/fees/mempool-blocks",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "fees",
-    "fragment": "precise-recommended-fees",
-    "title": "Get Precise Recommended Fees",
-    "description": {
-      "default": "Returns precise recommended fees."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/fees/precise",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/fees/precise",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "fees",
-    "fragment": "recommended-fees",
-    "title": "Get Recommended Fees",
-    "description": {
-      "default": "Returns recommended fees."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/fees/recommended",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/fees/recommended",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
-    "category": "mempool",
-    "fragment": "mempool",
-    "title": "Mempool",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "mempool",
-    "fragment": "recent-mempool-transactions",
-    "title": "Get Recent Mempool Transactions",
-    "description": {
-      "default": "Returns recent mempool transactions."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mempool/recent",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mempool/recent",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mempool",
-    "fragment": "mempool-tx-ids",
-    "title": "Get Mempool Transaction IDs",
-    "description": {
-      "default": "Returns mempool tx ids."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mempool/txids",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mempool/txids",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mempool",
-    "fragment": "mempool",
-    "title": "Get Mempool",
-    "description": {
-      "default": "Returns mempool."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mempool",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet",
-      "liquid",
-      "liquidtestnet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": true,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mempool",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
-    "category": "accelerator",
-    "fragment": "accelerator",
-    "title": "Accelerator",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "request-acceleration",
-    "title": "POST Request Acceleration",
-    "description": {
-      "default": "Request acceleration."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/acceleration/request/:txid",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/acceleration/request/:txid",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "active-accelerations",
-    "title": "GET Get Active Accelerations",
-    "description": {
-      "default": "Returns active accelerations."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/accelerations",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/accelerations",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "acceleration-totals",
-    "title": "GET Get Acceleration Totals",
-    "description": {
-      "default": "Returns acceleration totals."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/accelerations/total",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/accelerations/total",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "recent-accelerations",
-    "title": "GET Get Recent Accelerations",
-    "description": {
-      "default": "Returns recent accelerations."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/accelerations/recent/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/accelerations/recent/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerations-by-height",
-    "title": "GET Get Accelerations By Height",
-    "description": {
-      "default": "Returns accelerations by height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/accelerations/block/:height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/accelerations/block/:height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerations-by-pool",
-    "title": "GET Get Accelerations By Pool",
-    "description": {
-      "default": "Returns accelerations by pool."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/accelerations/pool/:slug",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/accelerations/pool/:slug",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-estimate",
-    "title": "POST Get Accelerator Estimate",
-    "description": {
-      "default": "Accelerator estimate."
-    },
-    "httpRequestMethod": "POST",
-    "urlString": "/v1/services/accelerator/estimate",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/estimate",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-accelerations-stats",
-    "title": "GET Get Accelerator Accelerations Stats",
-    "description": {
-      "default": "Returns accelerator accelerations stats."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/services/accelerator/accelerations/stats",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/accelerations/stats",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-accelerations-history-aggregated",
-    "title": "GET Get Accelerator Accelerations History Aggregated",
-    "description": {
-      "default": "Returns accelerator accelerations history aggregated."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/services/accelerator/accelerations/history/aggregated",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/accelerations/history/aggregated",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-accelerations-history",
-    "title": "GET Get Accelerator Accelerations History",
-    "description": {
-      "default": "Returns accelerator accelerations history."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/services/accelerator/accelerations/history",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/accelerations/history",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-acceleration",
-    "title": "GET Get Accelerator Acceleration",
-    "description": {
-      "default": "Returns accelerator acceleration."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/services/accelerator/accelerations/:txid",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/accelerations/:txid",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "accelerator",
-    "fragment": "accelerator-accelerations",
-    "title": "GET Get Accelerator Accelerations",
-    "description": {
-      "default": "Returns accelerator accelerations."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/services/accelerator/accelerations",
-    "showConditions": [
-      ""
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": false,
-      "signet": false,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/services/accelerator/accelerations",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "category",
-    "category": "mining",
-    "fragment": "mining",
-    "title": "Mining",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ]
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-price",
-    "title": "Get Historical Price",
-    "description": {
-      "default": "Returns historical price data for the specified currency and timestamp."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/historical-price",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/historical-price",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "height-from-timestamp",
-    "title": "GET Get Height From Timestamp",
-    "description": {
-      "default": "Returns height from timestamp."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/timestamp/:timestamp",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/timestamp/:timestamp",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "block-audit",
-    "title": "GET Get Block Audit",
-    "description": {
-      "default": "Returns block audit."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/audit/:hash",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/audit/:hash",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "block-audit-score",
-    "title": "GET Get Block Audit Score",
-    "description": {
-      "default": "Returns block audit score."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/audit/score/:hash",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/audit/score/:hash",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "block-audit-scores",
-    "title": "Get Block Audit Scores (From Height)",
-    "description": {
-      "default": "Returns block audit scores starting from the specified height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/audit/scores/:height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/audit/scores/:height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "block-audit-scores",
-    "title": "Get Block Audit Scores",
-    "description": {
-      "default": "Returns recent block audit scores."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/audit/scores",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/audit/scores",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-blocks-health",
-    "title": "GET Get Historical Blocks Health",
-    "description": {
-      "default": "Returns historical blocks health."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/predictions/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/predictions/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "difficulty-adjustments",
-    "title": "Get Difficulty Adjustments (Interval)",
-    "description": {
-      "default": "Returns difficulty adjustments for the specified interval."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/difficulty-adjustments/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/difficulty-adjustments/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-block-size-and-weight",
-    "title": "GET Get Historical Block Size And Weight",
-    "description": {
-      "default": "Returns historical block size and weight."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/sizes-weights/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/sizes-weights/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-block-fee-rates",
-    "title": "GET Get Historical Block Fee Rates",
-    "description": {
-      "default": "Returns historical block fee rates."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/fee-rates/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/fee-rates/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-block-rewards",
-    "title": "GET Get Historical Block Rewards",
-    "description": {
-      "default": "Returns historical block rewards."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/rewards/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/rewards/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "block-fees-timespan",
-    "title": "GET Get Block Fees Timespan",
-    "description": {
-      "default": "Returns block fees timespan."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/fees",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/fees",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-block-fees",
-    "title": "GET Get Historical Block Fees",
-    "description": {
-      "default": "Returns historical block fees."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/blocks/fees/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/blocks/fees/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "reward-stats",
-    "title": "GET Get Reward Stats",
-    "description": {
-      "default": "Returns reward stats."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/reward-stats/:blockCount",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/reward-stats/:blockCount",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "difficulty-adjustments",
-    "title": "Get Difficulty Adjustments",
-    "description": {
-      "default": "Returns all difficulty adjustments."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/difficulty-adjustments",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/difficulty-adjustments",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "historical-hashrate",
-    "title": "GET Get Historical Hashrate",
-    "description": {
-      "default": "Returns historical hashrate."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/hashrate/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/hashrate/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pools-historical-hashrate",
-    "title": "GET Get Pools Historical Hashrate",
-    "description": {
-      "default": "Returns pools historical hashrate."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/hashrate/pools/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/hashrate/pools/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pool",
-    "title": "GET Get Pool",
-    "description": {
-      "default": "Returns pool."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pool/:slug",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pool/:slug",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pool-blocks",
-    "title": "Get Pool Blocks (From Height)",
-    "description": {
-      "default": "Returns blocks mined by a specific pool starting from the specified height."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pool/:slug/blocks/:height",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pool/:slug/blocks/:height",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pool-blocks",
-    "title": "Get Pool Blocks",
-    "description": {
-      "default": "Returns recent blocks mined by a specific pool."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pool/:slug/blocks",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pool/:slug/blocks",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pool-historical-hashrate",
-    "title": "GET Get Pool Historical Hashrate",
-    "description": {
-      "default": "Returns pool historical hashrate."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pool/:slug/hashrate",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pool/:slug/hashrate",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "pools",
-    "title": "GET Get Pools",
-    "description": {
-      "default": "Returns pools."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pools/:interval",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pools/:interval",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        }
-      }
-    }
-  },
-  {
-    "type": "endpoint",
-    "category": "mining",
-    "fragment": "list-pools",
-    "title": "GET List Pools",
-    "description": {
-      "default": "Returns list pools."
-    },
-    "httpRequestMethod": "GET",
-    "urlString": "/v1/mining/pools",
-    "showConditions": [
-      "",
-      "testnet",
-      "testnet4",
-      "signet"
-    ],
-    "showJsExamples": {
-      "": true,
-      "testnet": true,
-      "signet": true,
-      "liquid": false,
-      "liquidtestnet": false
-    },
-    "codeExample": {
-      "default": {
-        "codeTemplate": {
-          "curl": "/api/v1/mining/pools",
-          "commonJS": "",
-          "esModule": ""
-        },
-        "codeSampleMainnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleTestnet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleSignet": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
-          "response": ""
-        },
-        "codeSampleLiquid": {
-          "esModule": [],
-          "commonJS": [],
-          "curl": [],
+          "esModule": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "commonJS": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
+          "curl": [
+            "GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q"
+          ],
           "response": ""
         }
       }
@@ -8886,9 +4718,1230 @@ export const restApiDocsData = [
   },
   {
     "type": "category",
-    "category": "statistics",
-    "fragment": "statistics",
-    "title": "Statistics",
+    "category": "blocks",
+    "fragment": "blocks",
+    "title": "Blocks",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "blocks-by-bulk",
+    "title": "Get Blocks Bulk (Range)",
+    "description": {
+      "default": "Returns blocks in bulk for the specified height range."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks-bulk/:from/:to",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks-bulk/:from/:to",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "blocks-by-bulk",
+    "title": "Get Blocks Bulk (From Height)",
+    "description": {
+      "default": "Returns blocks in bulk starting from the specified height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks-bulk/:from",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks-bulk/:from",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-tip-height",
+    "title": "Get Block Tip Height",
+    "description": {
+      "default": "Returns block tip height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks/tip/height",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks/tip/height",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-tx-audit-summary",
+    "title": "GET Get Block Tx Audit Summary",
+    "description": {
+      "default": "Returns block tx audit summary."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/tx/:txid/audit",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/:hash/tx/:txid/audit",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-audit-summary",
+    "title": "Get Block Audit Summary",
+    "description": {
+      "default": "Returns block audit summary."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/audit-summary",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/:hash/audit-summary",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "stripped-block-transaction",
+    "title": "GET Get Stripped Block Transaction",
+    "description": {
+      "default": "Returns stripped block transaction."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/tx/:txid/summary",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/:hash/tx/:txid/summary",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "stripped-block-transactions",
+    "title": "Get Block Summary",
+    "description": {
+      "default": "Returns stripped block transactions."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/summary",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/:hash/summary",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block",
+    "title": "Get Block",
+    "description": {
+      "default": "Returns block."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "blocks",
+    "title": "Get Blocks (From Height)",
+    "description": {
+      "default": "Returns 15 blocks starting from the specified height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks/:height",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks/%{1}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "730000"
+          ],
+          "commonJS": [
+            "730000"
+          ],
+          "curl": [
+            "730000"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "2000000"
+          ],
+          "commonJS": [
+            "2000000"
+          ],
+          "curl": [
+            "2000000"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "150000"
+          ],
+          "commonJS": [
+            "150000"
+          ],
+          "curl": [
+            "150000"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "1500000"
+          ],
+          "commonJS": [
+            "1500000"
+          ],
+          "curl": [
+            "1500000"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "blocks",
+    "title": "Get Blocks",
+    "description": {
+      "default": "Returns the 15 most recent blocks."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-height",
+    "title": "Get Block at Height",
+    "description": {
+      "default": "Returns block height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block-height/:height",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block-height/%{1}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "730000"
+          ],
+          "commonJS": [
+            "730000"
+          ],
+          "curl": [
+            "730000"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "2000000"
+          ],
+          "commonJS": [
+            "2000000"
+          ],
+          "curl": [
+            "2000000"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "150000"
+          ],
+          "commonJS": [
+            "150000"
+          ],
+          "curl": [
+            "150000"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "1500000"
+          ],
+          "commonJS": [
+            "1500000"
+          ],
+          "curl": [
+            "1500000"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-transactions",
+    "title": "Get Block Transactions (Paginated)",
+    "description": {
+      "default": "Returns 25 transactions in a block starting from the specified index."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/txs/:index",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}/txs/%{2}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce",
+            "0"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce",
+            "0"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce",
+            "0"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83",
+            "0"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83",
+            "0"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83",
+            "0"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a",
+            "0"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a",
+            "0"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a",
+            "0"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78",
+            "0"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78",
+            "0"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78",
+            "0"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-transactions",
+    "title": "Get Block Transactions",
+    "description": {
+      "default": "Returns the first 25 transactions in a block."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/txs",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}/txs",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "tx-ids-for-block",
+    "title": "Get Block Transaction IDs",
+    "description": {
+      "default": "Returns tx ids for block."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/txids",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}/txids",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "raw-block",
+    "title": "Get Raw Block",
+    "description": {
+      "default": "Returns raw block."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/raw",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}/raw",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-tip-hash",
+    "title": "Get Block Tip Hash",
+    "description": {
+      "default": "Returns block tip hash."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/blocks/tip/hash",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/blocks/tip/hash",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "blocks",
+    "fragment": "block-header",
+    "title": "Get Block Header",
+    "description": {
+      "default": "Returns block header."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/block/:hash/header",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/block/%{1}/header",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "commonJS": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "curl": [
+            "000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "commonJS": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "curl": [
+            "000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "commonJS": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "curl": [
+            "000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "commonJS": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "curl": [
+            "86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "mining",
+    "fragment": "mining",
+    "title": "Mining",
     "showConditions": [
       "",
       "testnet",
@@ -8898,14 +5951,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (All Time)",
+    "category": "mining",
+    "fragment": "historical-price",
+    "title": "Get Historical Price",
     "description": {
-      "default": "Returns mempool statistics for all available time."
+      "default": "Returns historical price data for the specified currency and timestamp."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/all",
+    "urlString": "/v1/historical-price",
     "showConditions": [
       "",
       "testnet",
@@ -8922,7 +5975,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/all",
+          "curl": "/api/v1/historical-price",
           "commonJS": "",
           "esModule": ""
         },
@@ -8955,14 +6008,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (4 Years)",
+    "category": "mining",
+    "fragment": "height-from-timestamp",
+    "title": "GET Get Height From Timestamp",
     "description": {
-      "default": "Returns mempool statistics for the last 4 years."
+      "default": "Returns height from timestamp."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/4y",
+    "urlString": "/v1/mining/blocks/timestamp/:timestamp",
     "showConditions": [
       "",
       "testnet",
@@ -8979,7 +6032,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/4y",
+          "curl": "/api/v1/mining/blocks/timestamp/:timestamp",
           "commonJS": "",
           "esModule": ""
         },
@@ -9012,14 +6065,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (3 Years)",
+    "category": "mining",
+    "fragment": "block-audit",
+    "title": "GET Get Block Audit",
     "description": {
-      "default": "Returns mempool statistics for the last 3 years."
+      "default": "Returns block audit."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/3y",
+    "urlString": "/v1/mining/blocks/audit/:hash",
     "showConditions": [
       "",
       "testnet",
@@ -9036,7 +6089,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/3y",
+          "curl": "/api/v1/mining/blocks/audit/:hash",
           "commonJS": "",
           "esModule": ""
         },
@@ -9069,14 +6122,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (2 Years)",
+    "category": "mining",
+    "fragment": "block-audit-score",
+    "title": "GET Get Block Audit Score",
     "description": {
-      "default": "Returns mempool statistics for the last 2 years."
+      "default": "Returns block audit score."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/2y",
+    "urlString": "/v1/mining/blocks/audit/score/:hash",
     "showConditions": [
       "",
       "testnet",
@@ -9093,7 +6146,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/2y",
+          "curl": "/api/v1/mining/blocks/audit/score/:hash",
           "commonJS": "",
           "esModule": ""
         },
@@ -9126,14 +6179,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (1 Year)",
+    "category": "mining",
+    "fragment": "block-audit-scores",
+    "title": "Get Block Audit Scores (From Height)",
     "description": {
-      "default": "Returns mempool statistics for the last year."
+      "default": "Returns block audit scores starting from the specified height."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/1y",
+    "urlString": "/v1/mining/blocks/audit/scores/:height",
     "showConditions": [
       "",
       "testnet",
@@ -9150,7 +6203,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/1y",
+          "curl": "/api/v1/mining/blocks/audit/scores/:height",
           "commonJS": "",
           "esModule": ""
         },
@@ -9183,14 +6236,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (6 Months)",
+    "category": "mining",
+    "fragment": "block-audit-scores",
+    "title": "Get Block Audit Scores",
     "description": {
-      "default": "Returns mempool statistics for the last 6 months."
+      "default": "Returns recent block audit scores."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/6m",
+    "urlString": "/v1/mining/blocks/audit/scores",
     "showConditions": [
       "",
       "testnet",
@@ -9207,7 +6260,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/6m",
+          "curl": "/api/v1/mining/blocks/audit/scores",
           "commonJS": "",
           "esModule": ""
         },
@@ -9240,14 +6293,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (3 Months)",
+    "category": "mining",
+    "fragment": "historical-blocks-health",
+    "title": "GET Get Historical Blocks Health",
     "description": {
-      "default": "Returns mempool statistics for the last 3 months."
+      "default": "Returns historical blocks health."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/3m",
+    "urlString": "/v1/mining/blocks/predictions/:interval",
     "showConditions": [
       "",
       "testnet",
@@ -9264,7 +6317,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/3m",
+          "curl": "/api/v1/mining/blocks/predictions/:interval",
           "commonJS": "",
           "esModule": ""
         },
@@ -9297,14 +6350,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (1 Month)",
+    "category": "mining",
+    "fragment": "difficulty-adjustments",
+    "title": "Get Difficulty Adjustments (Interval)",
     "description": {
-      "default": "Returns mempool statistics for the last month."
+      "default": "Returns difficulty adjustments for the specified interval."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/1m",
+    "urlString": "/v1/mining/difficulty-adjustments/:interval",
     "showConditions": [
       "",
       "testnet",
@@ -9321,7 +6374,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/1m",
+          "curl": "/api/v1/mining/difficulty-adjustments/:interval",
           "commonJS": "",
           "esModule": ""
         },
@@ -9354,14 +6407,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (1 Week)",
+    "category": "mining",
+    "fragment": "historical-block-size-and-weight",
+    "title": "GET Get Historical Block Size And Weight",
     "description": {
-      "default": "Returns mempool statistics for the last week."
+      "default": "Returns historical block size and weight."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/1w",
+    "urlString": "/v1/mining/blocks/sizes-weights/:interval",
     "showConditions": [
       "",
       "testnet",
@@ -9378,7 +6431,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/1w",
+          "curl": "/api/v1/mining/blocks/sizes-weights/:interval",
           "commonJS": "",
           "esModule": ""
         },
@@ -9411,14 +6464,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (24 Hours)",
+    "category": "mining",
+    "fragment": "historical-block-fee-rates",
+    "title": "GET Get Historical Block Fee Rates",
     "description": {
-      "default": "Returns mempool statistics for the last 24 hours."
+      "default": "Returns historical block fee rates."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/24h",
+    "urlString": "/v1/mining/blocks/fee-rates/:interval",
     "showConditions": [
       "",
       "testnet",
@@ -9435,7 +6488,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/24h",
+          "curl": "/api/v1/mining/blocks/fee-rates/:interval",
           "commonJS": "",
           "esModule": ""
         },
@@ -9468,14 +6521,14 @@ export const restApiDocsData = [
   },
   {
     "type": "endpoint",
-    "category": "statistics",
-    "fragment": "statistics-by-time",
-    "title": "Get Statistics (2 Hours)",
+    "category": "mining",
+    "fragment": "historical-block-rewards",
+    "title": "GET Get Historical Block Rewards",
     "description": {
-      "default": "Returns mempool statistics for the last 2 hours."
+      "default": "Returns historical block rewards."
     },
     "httpRequestMethod": "GET",
-    "urlString": "/v1/statistics/2h",
+    "urlString": "/v1/mining/blocks/rewards/:interval",
     "showConditions": [
       "",
       "testnet",
@@ -9492,7 +6545,7 @@ export const restApiDocsData = [
     "codeExample": {
       "default": {
         "codeTemplate": {
-          "curl": "/api/v1/statistics/2h",
+          "curl": "/api/v1/mining/blocks/rewards/:interval",
           "commonJS": "",
           "esModule": ""
         },
@@ -9518,6 +6571,2095 @@ export const restApiDocsData = [
           "esModule": [],
           "commonJS": [],
           "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "block-fees-timespan",
+    "title": "GET Get Block Fees Timespan",
+    "description": {
+      "default": "Returns block fees timespan."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/blocks/fees",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/blocks/fees",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "historical-block-fees",
+    "title": "GET Get Historical Block Fees",
+    "description": {
+      "default": "Returns historical block fees."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/blocks/fees/:interval",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/blocks/fees/:interval",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "reward-stats",
+    "title": "GET Get Reward Stats",
+    "description": {
+      "default": "Returns reward stats."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/reward-stats/:blockCount",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/reward-stats/:blockCount",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "difficulty-adjustments",
+    "title": "Get Difficulty Adjustments",
+    "description": {
+      "default": "Returns all difficulty adjustments."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/difficulty-adjustments",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/difficulty-adjustments",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "historical-hashrate",
+    "title": "GET Get Historical Hashrate",
+    "description": {
+      "default": "Returns historical hashrate."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/hashrate/:interval",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/hashrate/:interval",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pools-historical-hashrate",
+    "title": "GET Get Pools Historical Hashrate",
+    "description": {
+      "default": "Returns pools historical hashrate."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/hashrate/pools/:interval",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/hashrate/pools/:interval",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pool",
+    "title": "GET Get Pool",
+    "description": {
+      "default": "Returns pool."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pool/:slug",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pool/%{1}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pool-blocks",
+    "title": "Get Pool Blocks (From Height)",
+    "description": {
+      "default": "Returns blocks mined by a specific pool starting from the specified height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pool/:slug/blocks/:height",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pool/%{1}/blocks/%{2}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "foundryusa",
+            "730000"
+          ],
+          "commonJS": [
+            "foundryusa",
+            "730000"
+          ],
+          "curl": [
+            "foundryusa",
+            "730000"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "foundryusa",
+            "2000000"
+          ],
+          "commonJS": [
+            "foundryusa",
+            "2000000"
+          ],
+          "curl": [
+            "foundryusa",
+            "2000000"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "foundryusa",
+            "150000"
+          ],
+          "commonJS": [
+            "foundryusa",
+            "150000"
+          ],
+          "curl": [
+            "foundryusa",
+            "150000"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pool-blocks",
+    "title": "Get Pool Blocks",
+    "description": {
+      "default": "Returns recent blocks mined by a specific pool."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pool/:slug/blocks",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pool/%{1}/blocks",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "foundryusa"
+          ],
+          "commonJS": [
+            "foundryusa"
+          ],
+          "curl": [
+            "foundryusa"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pool-historical-hashrate",
+    "title": "GET Get Pool Historical Hashrate",
+    "description": {
+      "default": "Returns pool historical hashrate."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pool/:slug/hashrate",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pool/:slug/hashrate",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "pools",
+    "title": "GET Get Pools",
+    "description": {
+      "default": "Returns pools."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pools/:interval",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pools/:interval",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mining",
+    "fragment": "list-pools",
+    "title": "GET List Pools",
+    "description": {
+      "default": "Returns list pools."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mining/pools",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mining/pools",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "fees",
+    "fragment": "fees",
+    "title": "Fees",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "fees",
+    "fragment": "mempool-blocks",
+    "title": "Get Mempool Blocks",
+    "description": {
+      "default": "Returns mempool blocks."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/fees/mempool-blocks",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/fees/mempool-blocks",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "fees",
+    "fragment": "precise-recommended-fees",
+    "title": "Get Precise Recommended Fees",
+    "description": {
+      "default": "Returns precise recommended fees."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/fees/precise",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/fees/precise",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "fees",
+    "fragment": "recommended-fees",
+    "title": "Get Recommended Fees",
+    "description": {
+      "default": "Returns recommended fees."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/fees/recommended",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/fees/recommended",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "mempool",
+    "fragment": "mempool",
+    "title": "Mempool",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "mempool",
+    "fragment": "recent-mempool-transactions",
+    "title": "Get Recent Mempool Transactions",
+    "description": {
+      "default": "Returns recent mempool transactions."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mempool/recent",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mempool/recent",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mempool",
+    "fragment": "mempool-tx-ids",
+    "title": "Get Mempool Transaction IDs",
+    "description": {
+      "default": "Returns mempool tx ids."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mempool/txids",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mempool/txids",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "mempool",
+    "fragment": "mempool",
+    "title": "Get Mempool",
+    "description": {
+      "default": "Returns mempool."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/mempool",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/mempool",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "transactions",
+    "fragment": "transactions",
+    "title": "Transactions",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "submit-package",
+    "title": "POST Submit Package",
+    "description": {
+      "default": "Submit package."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/txs/package",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/txs/package",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "cpfp-local-txs",
+    "title": "Get CPFP Local Transactions",
+    "description": {
+      "default": "Cpfp local txs."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/cpfp",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/cpfp",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction-form",
+    "title": "POST Post Transaction Form",
+    "description": {
+      "default": "Transaction form."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/tx/push",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/push",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "cached-tx",
+    "title": "Get Cached Transaction",
+    "description": {
+      "default": "Returns cached tx."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/cached",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/:txId/cached",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "rbf-history",
+    "title": "Get RBF History",
+    "description": {
+      "default": "Returns rbf history."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/rbf",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/:txId/rbf",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "cpfp-info",
+    "title": "GET Get Cpfp Info",
+    "description": {
+      "default": "Returns cpfp info."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/cpfp/:txId",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/cpfp/:txId",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "batched-outspends",
+    "title": "GET Get Batched Outspends",
+    "description": {
+      "default": "Returns batched outspends."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/txs/outspends",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/txs/outspends",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction-merkle-proof",
+    "title": "Get Transaction Merkle Proof",
+    "description": {
+      "default": "Returns transaction merkle proof."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/merkle-proof",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/%{1}/merkle-proof",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction-outspends",
+    "title": "Get Transaction Outspends",
+    "description": {
+      "default": "Returns transaction outspends."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/outspends",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/%{1}/outspends",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction-status",
+    "title": "Get Transaction Status",
+    "description": {
+      "default": "Returns transaction status."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/status",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/%{1}/status",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "raw-transaction",
+    "title": "Get Raw Transaction Hex",
+    "description": {
+      "default": "Returns raw transaction."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId/hex",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/%{1}/hex",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "test-transactions",
+    "title": "POST Test Transactions",
+    "description": {
+      "default": "Test transactions."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/txs/test",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/txs/test",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction",
+    "title": "POST Post Transaction",
+    "description": {
+      "default": "Transaction."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/tx",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "transactions",
+    "fragment": "transaction",
+    "title": "Get Transaction",
+    "description": {
+      "default": "Returns transaction."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/tx/:txId",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet",
+      "liquid",
+      "liquidtestnet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": true,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/tx/%{1}",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "commonJS": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
+          "curl": [
+            "15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521"
+          ],
           "response": ""
         }
       }
@@ -10848,6 +9990,1323 @@ export const restApiDocsData = [
       "default": {
         "codeTemplate": {
           "curl": "/api/v1/lightning/search",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "accelerator",
+    "fragment": "accelerator",
+    "title": "Accelerator",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "request-acceleration",
+    "title": "POST Request Acceleration",
+    "description": {
+      "default": "Request acceleration."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/acceleration/request/:txid",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/acceleration/request/:txid",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "active-accelerations",
+    "title": "GET Get Active Accelerations",
+    "description": {
+      "default": "Returns active accelerations."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/accelerations",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/accelerations",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "acceleration-totals",
+    "title": "GET Get Acceleration Totals",
+    "description": {
+      "default": "Returns acceleration totals."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/accelerations/total",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/accelerations/total",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "recent-accelerations",
+    "title": "GET Get Recent Accelerations",
+    "description": {
+      "default": "Returns recent accelerations."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/accelerations/recent/:interval",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/accelerations/recent/:interval",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerations-by-height",
+    "title": "GET Get Accelerations By Height",
+    "description": {
+      "default": "Returns accelerations by height."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/accelerations/block/:height",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/accelerations/block/:height",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerations-by-pool",
+    "title": "GET Get Accelerations By Pool",
+    "description": {
+      "default": "Returns accelerations by pool."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/accelerations/pool/:slug",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/accelerations/pool/:slug",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-estimate",
+    "title": "POST Get Accelerator Estimate",
+    "description": {
+      "default": "Accelerator estimate."
+    },
+    "httpRequestMethod": "POST",
+    "urlString": "/v1/services/accelerator/estimate",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/estimate",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-accelerations-stats",
+    "title": "GET Get Accelerator Accelerations Stats",
+    "description": {
+      "default": "Returns accelerator accelerations stats."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/accelerations/stats",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerations/stats",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-accelerations-history-aggregated",
+    "title": "GET Get Accelerator Accelerations History Aggregated",
+    "description": {
+      "default": "Returns accelerator accelerations history aggregated."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/accelerations/history/aggregated",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerations/history/aggregated",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-accelerations-history",
+    "title": "GET Get Accelerator Accelerations History",
+    "description": {
+      "default": "Returns accelerator accelerations history."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/accelerations/history",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerations/history",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-acceleration",
+    "title": "GET Get Accelerator Acceleration",
+    "description": {
+      "default": "Returns accelerator acceleration."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/accelerations/:txid",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerations/:txid",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "accelerator",
+    "fragment": "accelerator-accelerations",
+    "title": "GET Get Accelerator Accelerations",
+    "description": {
+      "default": "Returns accelerator accelerations."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/services/accelerator/accelerations",
+    "showConditions": [
+      ""
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": false,
+      "signet": false,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/services/accelerator/accelerations",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "category",
+    "category": "statistics",
+    "fragment": "statistics",
+    "title": "Statistics",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ]
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (All Time)",
+    "description": {
+      "default": "Returns mempool statistics for all available time."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/all",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/all",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (4 Years)",
+    "description": {
+      "default": "Returns mempool statistics for the last 4 years."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/4y",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/4y",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (3 Years)",
+    "description": {
+      "default": "Returns mempool statistics for the last 3 years."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/3y",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/3y",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (2 Years)",
+    "description": {
+      "default": "Returns mempool statistics for the last 2 years."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/2y",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/2y",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (1 Year)",
+    "description": {
+      "default": "Returns mempool statistics for the last year."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/1y",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/1y",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (6 Months)",
+    "description": {
+      "default": "Returns mempool statistics for the last 6 months."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/6m",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/6m",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (3 Months)",
+    "description": {
+      "default": "Returns mempool statistics for the last 3 months."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/3m",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/3m",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (1 Month)",
+    "description": {
+      "default": "Returns mempool statistics for the last month."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/1m",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/1m",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (1 Week)",
+    "description": {
+      "default": "Returns mempool statistics for the last week."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/1w",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/1w",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (24 Hours)",
+    "description": {
+      "default": "Returns mempool statistics for the last 24 hours."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/24h",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/24h",
+          "commonJS": "",
+          "esModule": ""
+        },
+        "codeSampleMainnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleTestnet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleSignet": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        },
+        "codeSampleLiquid": {
+          "esModule": [],
+          "commonJS": [],
+          "curl": [],
+          "response": ""
+        }
+      }
+    }
+  },
+  {
+    "type": "endpoint",
+    "category": "statistics",
+    "fragment": "statistics-by-time",
+    "title": "Get Statistics (2 Hours)",
+    "description": {
+      "default": "Returns mempool statistics for the last 2 hours."
+    },
+    "httpRequestMethod": "GET",
+    "urlString": "/v1/statistics/2h",
+    "showConditions": [
+      "",
+      "testnet",
+      "testnet4",
+      "signet"
+    ],
+    "showJsExamples": {
+      "": true,
+      "testnet": true,
+      "signet": true,
+      "liquid": false,
+      "liquidtestnet": false
+    },
+    "codeExample": {
+      "default": {
+        "codeTemplate": {
+          "curl": "/api/v1/statistics/2h",
           "commonJS": "",
           "esModule": ""
         },

@@ -45,6 +45,21 @@ export interface CodeSample {
 }
 
 // Route path to category mapping
+// Category order to match original docs
+const CATEGORY_ORDER = [
+  'general',
+  'addresses',
+  'assets',
+  'blocks',
+  'mining',
+  'fees',
+  'mempool',
+  'transactions',
+  'lightning',
+  'accelerator',
+  'statistics',
+];
+
 const PATH_TO_CATEGORY: Record<string, string> = {
   '/api/v1/fees': 'fees',
   '/api/v1/mempool': 'mempool',
@@ -65,6 +80,165 @@ const PATH_TO_CATEGORY: Record<string, string> = {
   '/api/v1/validate': 'addresses',
   '/api/v1/backend': 'general',
   '/api/v1/init': 'general',
+};
+
+// Sample values for curl placeholders
+const SAMPLE_VALUES: Record<string, Record<string, string[]>> = {
+  // Addresses
+  '/v1/address/:address': {
+    mainnet: ['1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv'],
+    testnet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    signet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    liquid: ['GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q'],
+  },
+  '/v1/address/:address/txs': {
+    mainnet: ['1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv'],
+    testnet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    signet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    liquid: ['GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q'],
+  },
+  '/v1/address/:address/txs/chain/:lastSeenTxId': {
+    mainnet: ['1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv', 'foobar'],
+    testnet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee', 'foobar'],
+    signet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee', 'foobar'],
+    liquid: ['GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q', 'foobar'],
+  },
+  '/v1/address/:address/utxo': {
+    mainnet: ['1wiz18xYmhRX6xStj2b9t1rwWX4GKUgpv'],
+    testnet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    signet: ['tb1qp0we5epypgj4acd2c4au58045ruud2pd6heuee'],
+    liquid: ['GuzUPgbPpYfLnSckh9dBZGJJwABEmQoC1Q'],
+  },
+  // Transactions
+  '/v1/tx/:txId': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/status': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/hex': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/merkleblock-proof': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/merkle-proof': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/outspends': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521'],
+  },
+  '/v1/tx/:txId/outspend/:vout': {
+    mainnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521', '0'],
+    testnet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521', '0'],
+    signet: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521', '0'],
+    liquid: ['15e10745f15593a899cef391191bdd3d7c12412cc4696b7bcb669d0feadc8521', '0'],
+  },
+  // Blocks
+  '/v1/block/:hash': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78'],
+  },
+  '/v1/block/:hash/header': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78'],
+  },
+  '/v1/block/:hash/txids': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78'],
+  },
+  '/v1/block/:hash/txs': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78'],
+  },
+  '/v1/block/:hash/txs/:index': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce', '0'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83', '0'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a', '0'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78', '0'],
+  },
+  '/v1/block/:hash/raw': {
+    mainnet: ['000000000000000015dc777b3ff2611091336355d3f0ee9766a2cf3be8e4b1ce'],
+    testnet: ['000000000000004a3ff1faff12c926c117a34bc22712623cd03a7c9d1866ef83'],
+    signet: ['000000ca66fab45e4560de653f1b519562ee8f5a5a5b5a5a5a5a5a5a5a5a5a5a'],
+    liquid: ['86aefdd3cf7be8e5781f783fe5d80513e8b3f52f2f1ef61e8e056b7faffc4b78'],
+  },
+  '/v1/block-height/:height': {
+    mainnet: ['730000'],
+    testnet: ['2000000'],
+    signet: ['150000'],
+    liquid: ['1500000'],
+  },
+  '/v1/blocks/:height': {
+    mainnet: ['730000'],
+    testnet: ['2000000'],
+    signet: ['150000'],
+    liquid: ['1500000'],
+  },
+  '/v1/blocks': {
+    mainnet: [],
+    testnet: [],
+    signet: [],
+    liquid: [],
+  },
+  // Mining
+  '/v1/mining/pool/:slug': {
+    mainnet: ['foundryusa'],
+    testnet: ['foundryusa'],
+    signet: ['foundryusa'],
+    liquid: [],
+  },
+  '/v1/mining/pool/:slug/blocks': {
+    mainnet: ['foundryusa'],
+    testnet: ['foundryusa'],
+    signet: ['foundryusa'],
+    liquid: [],
+  },
+  '/v1/mining/pool/:slug/blocks/:height': {
+    mainnet: ['foundryusa', '730000'],
+    testnet: ['foundryusa', '2000000'],
+    signet: ['foundryusa', '150000'],
+    liquid: [],
+  },
+  // Lightning
+  '/v1/lightning/nodes/:pubKey': {
+    mainnet: ['03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f'],
+    testnet: ['03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f'],
+    signet: ['03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f'],
+    liquid: [],
+  },
+  '/v1/lightning/channels/:channelId': {
+    mainnet: ['768457472831193088'],
+    testnet: ['768457472831193088'],
+    signet: ['768457472831193088'],
+    liquid: [],
+  },
 };
 
 // URL path to title mapping (takes precedence over handler mapping for specific paths)
@@ -258,7 +432,11 @@ export class FrontendGenerator {
     // Generate REST endpoints grouped by category
     const categorizedRoutes = this.categorizeRoutes();
 
-    for (const [category, routes] of Object.entries(categorizedRoutes)) {
+    // Iterate in defined category order
+    for (const category of CATEGORY_ORDER) {
+      const routes = categorizedRoutes[category];
+      if (!routes || routes.length === 0) continue;
+
       // Add category header
       restApiDocsData.push({
         type: 'category',
@@ -278,6 +456,38 @@ export class FrontendGenerator {
       }
 
       // Sort endpoints: non-internal first, then internal at the bottom
+      endpoints.sort((a, b) => {
+        const aIsInternal = a.tags?.includes('INTERNAL') ?? false;
+        const bIsInternal = b.tags?.includes('INTERNAL') ?? false;
+        if (aIsInternal && !bIsInternal) return 1;
+        if (!aIsInternal && bIsInternal) return -1;
+        return 0;
+      });
+
+      restApiDocsData.push(...endpoints);
+    }
+
+    // Add any categories not in CATEGORY_ORDER at the end
+    for (const [category, routes] of Object.entries(categorizedRoutes)) {
+      if (CATEGORY_ORDER.includes(category)) continue;
+      if (!routes || routes.length === 0) continue;
+
+      restApiDocsData.push({
+        type: 'category',
+        category,
+        fragment: category,
+        title: this.categoryToTitle(category),
+        showConditions: this.getCategoryNetworks(routes),
+      });
+
+      const endpoints: FrontendEndpoint[] = [];
+      for (const route of routes) {
+        const endpoint = this.routeToEndpoint(route, category);
+        if (endpoint) {
+          endpoints.push(endpoint);
+        }
+      }
+
       endpoints.sort((a, b) => {
         const aIsInternal = a.tags?.includes('INTERNAL') ?? false;
         const bIsInternal = b.tags?.includes('INTERNAL') ?? false;
@@ -557,26 +767,57 @@ export class FrontendGenerator {
   private generateCodeExample(route: ParsedRoute, urlString: string, networks: NetworkId[]): FrontendEndpoint['codeExample'] {
     // urlString has /api stripped for display, but curl links need /api prefix
     const curlPath = `/api${urlString}`;
+    const method = route.method.toUpperCase();
 
-    // Create empty code samples for each network
-    const emptySample: CodeSample = {
-      esModule: [],
-      commonJS: [],
-      curl: [],
-      response: '',
+    // Get sample values for this endpoint
+    const sampleValues = SAMPLE_VALUES[urlString] || {};
+    const hasSampleValues = Object.keys(sampleValues).length > 0 &&
+      Object.values(sampleValues).some(arr => arr.length > 0);
+
+    // Only convert URL parameters to placeholders if we have sample values
+    let finalCurlTemplate: string;
+
+    if (hasSampleValues) {
+      // Convert URL parameters (:param) to placeholders (%{1}, %{2}, etc.)
+      let placeholderIndex = 0;
+      const curlTemplate = curlPath.replace(/:([a-zA-Z0-9_]+)/g, () => {
+        placeholderIndex++;
+        return `%{${placeholderIndex}}`;
+      });
+
+      if (method === 'POST') {
+        // POST format: data first, then URL with hostname placeholder
+        finalCurlTemplate = `%{1}" "[[hostname]][[baseNetworkUrl]]${curlTemplate.replace('%{1}', '').replace(/\/$/, '')}`;
+      } else {
+        finalCurlTemplate = curlTemplate;
+      }
+    } else {
+      // No sample values - keep original path format (no placeholders)
+      finalCurlTemplate = curlPath;
+    }
+
+    // Helper to create code sample with curl values
+    const createCodeSample = (network: string): CodeSample => {
+      const values = sampleValues[network] || [];
+      return {
+        esModule: values,
+        commonJS: values,
+        curl: values,
+        response: '',
+      };
     };
 
     return {
       default: {
         codeTemplate: {
-          curl: curlPath,
+          curl: finalCurlTemplate,
           commonJS: '',
           esModule: '',
         },
-        codeSampleMainnet: { ...emptySample },
-        codeSampleTestnet: { ...emptySample },
-        codeSampleSignet: { ...emptySample },
-        codeSampleLiquid: { ...emptySample },
+        codeSampleMainnet: createCodeSample('mainnet'),
+        codeSampleTestnet: createCodeSample('testnet'),
+        codeSampleSignet: createCodeSample('signet'),
+        codeSampleLiquid: createCodeSample('liquid'),
       },
     };
   }

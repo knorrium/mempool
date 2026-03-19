@@ -287,12 +287,12 @@ yarn add @mempool/liquid.js`;
     if (this.env.BASE_MODULE === 'mempool') {
       if (this.network === 'main' || this.network === '' || this.network === this.env.ROOT_NETWORK) {
         if (this.method === 'POST') {
-          return `curl${headersString} -X POST -sSLd "${text}"`;
+          return `curl${headersString} -X POST -sSLd "${this.hostname}${text}"`;
         }
         return `curl${headersString} -sSL "${this.hostname}${text}"`;
       }
       if (this.method === 'POST') {
-        return `curl${headersString} -X POST -sSLd "${text}"`;
+        return `curl${headersString} -X POST -sSLd "${this.hostname}/${this.network}${text}"`;
       }
       return `curl${headersString} -sSL "${this.hostname}/${this.network}${text}"`;
     } else if (this.env.BASE_MODULE === 'liquid') {
@@ -300,7 +300,7 @@ yarn add @mempool/liquid.js`;
         if (this.network !== 'liquid' || this.network === this.env.ROOT_NETWORK) {
           text = text.replace('/api', `/${this.network}/api`);
         }
-        return `curl${headersString} -X POST -sSLd "${text}"`;
+        return `curl${headersString} -X POST -sSLd "${this.hostname}${text}"`;
       }
       return ( this.network === 'liquid' ? `curl${headersString} -sSL "${this.hostname}${text}"` : `curl${headersString} -sSL "${this.hostname}/${this.network}${text}"` );
     } else {
